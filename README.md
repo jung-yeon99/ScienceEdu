@@ -5,15 +5,13 @@
 
 ## Pages
 
-1. Catagroi : 새로운 소품샵 추가
-2. Mypage : 마이페이지
-  - Notice : 공지사항
-  - Checklist : 체크리스트
-  - Check Study : 공부량 체크
-  - Report : 신고
-  - Attendance Check : 출석 확인
-  - Withdraw Account : 회원 탈퇴
-  - Management : 스터디원 관리
+1. Main : 메인페이지
+2. Intro : 소개 페이지
+3. Grade : 학년별 맞춤 과학 정보
+4. Subject : 과목별(지구과학,생명과학,화학,생명과학) 맞춤 과학 정보
+5. News : 과학 뉴스 카드
+6. QnA : 질문 게시판
+
 
 ## Frontend
 
