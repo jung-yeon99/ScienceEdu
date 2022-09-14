@@ -1,0 +1,432 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+<style>
+body {
+  font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+  margin: 0px;
+  padding: 50px;
+  background: #e1e1e1;
+}
+.menu {
+  position: relative;
+  height: 60px;
+  background: #2b2f3a;
+  width: auto;
+}
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+.menu > ul {
+  position: relative;
+  display: block;
+  background: #000000;
+  width: 100%;
+  z-index: 500;
+}
+.menu:after, .menu > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.menu.align-right > ul > li {
+  float: right;
+}
+.menu.align-center ul {
+  text-align: center;
+}
+.menu.align-center ul ul {
+  text-align: left;
+}
+.menu > ul > li {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.menu > ul > #menu-button {
+  display: none;
+}
+.menu ul li a {
+  display: block;
+  font-family: Helvetica, sans-serif;
+  text-decoration: none;
+}
+.menu > ul > li > a {
+  font-size: 25px;
+  font-weight: bold;
+  padding: 20px 25px;
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-transition: color 0.25s ease-out;
+  -moz-transition: color 0.25s ease-out;
+  -ms-transition: color 0.25s ease-out;
+  -o-transition: color 0.25s ease-out;
+  transition: color 0.25s ease-out;
+}
+.menu > ul > li.sub > a {
+  padding-right: 32px;
+}
+.menu > ul > li:hover > a {
+  color: #ffffff;
+}
+.menu li.sub::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.menu > ul > li.sub::after {
+  right: 10px;
+  top: 20px;
+  border: 5px solid transparent;
+  border-top-color: #7a8189;
+}
+.menu > ul > li:hover::after {
+  border-top-color: #ffffff;
+}
+.menu ul ul {
+  position: absolute;
+  left: -9999px;
+  top: 70px;
+  opacity: 0;
+  -webkit-transition: opacity .3s ease, top .25s ease;
+  -moz-transition: opacity .3s ease, top .25s ease;
+  -ms-transition: opacity .3s ease, top .25s ease;
+  -o-transition: opacity .3s ease, top .25s ease;
+  transition: opacity .3s ease, top .25s ease;
+  z-index: 1000;
+}
+.menu ul ul ul {
+  top: 37px;
+  padding-left: 5px;
+}
+.menu ul ul li {
+  position: relative;
+}
+.menu > ul > li:hover > ul {
+  left: auto;
+  top: 44px;
+  opacity: 1;
+}
+.menu.align-right > ul > li:hover > ul {
+  left: auto;
+  right: 0;
+  opacity: 1;
+}
+.menu ul ul li:hover > ul {
+  left: 170px;
+  top: 0;
+  opacity: 1;
+}
+.menu.align-right ul ul li:hover > ul {
+  left: auto;
+  right: 170px;
+  top: 0;
+  opacity: 1;
+  padding-right: 5px;
+}
+.menu ul ul li a {
+  width: 130px;
+  border-bottom: 1px solid #eeeeee;
+  padding: 10px 20px;
+  font-size: 20px;
+  color: #000000;
+  background: #ffffff;
+  -webkit-transition: all .35s ease;
+  -moz-transition: all .35s ease;
+  -ms-transition: all .35s ease;
+  -o-transition: all .35s ease;
+  transition: all .35s ease;
+}
+.menu.align-right ul ul li a {
+  text-align: right;
+}
+.menu ul ul li:hover > a {
+  background: #f2f2f2;
+  color: #8c9195;
+}
+.menu ul ul li:last-child > a, .menu ul ul li.last > a {
+  border-bottom: 0;
+}
+.menu > ul > li > ul::after {
+  content: '';
+  border: 6px solid transparent;
+  width: 0;
+  height: 0;
+  border-bottom-color: #ffffff;
+  position: absolute;
+  top: -12px;
+  left: 30px;
+}
+.menu.align-right > ul > li > ul::after {
+  left: auto;
+  right: 30px;
+
+.menu.align-right ul ul li.sub::after {
+  border-left-color: transparent;
+  border-right-color: #9ea2a5;
+  right: auto;
+  left: 10px;
+}
+.menu ul ul li.sub:hover::after {
+  border-left-color: #ffffff;
+  right: -5px;
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.menu.align-right ul ul li.sub:hover::after {
+  border-right-color: #ffffff;
+  border-left-color: transparent;
+  left: -5px;
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+</style>
+		<title>과학 정보 포털 사이언스에듀</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<div class='menu'>
+			<ul>
+			<br>
+			&nbsp&nbsp&nbsp&nbsp&nbsp<a href="index.html"><img src="images/logoo.jpg" width="400" height="70"> </a>
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			
+			<li>
+					<a href='index.html'>HOME</a>
+				</li>
+				<li>
+					<a href='intro.html'>소개</a>
+				</li>
+				<li class='active sub'>
+					<a href='grade12.html'>학년</a>
+					<ul>
+						<li class='sub'>
+							<a href='grade12.html'>1,2학년</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='grade34.html'>3,4학년</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='grade5.html'>5학년</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='grade6.html'>6학년</a>
+							
+						</li>
+					</ul>
+				</li>
+				<li class='active sub'>
+					<a href='physics.html'>과목</a>
+					<ul>
+						<li class='sub'>
+							<a href='physics.html'>물리</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='chemistry.html'>화학</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='earth.html'>지구과학</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='life.html'>생명과학</a>
+							
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href='news.html'>뉴스</a>
+				</li>
+				<li>
+					<a href='13-03_list.jsp'>QnA</a>
+				</li>
+				
+				
+			</ul>
+		</div>
+		</center>
+
+		<!-- One -->
+			<section id="One" class="wrapper style3">
+				<div class="inner">
+					<header class="align-center">
+						<p>Chemistry</p>
+						<h2>화학</h2>
+					</header>
+				</div>
+			</section>
+
+		<!-- Two -->
+		
+			<section id="two" class="wrapper style2">
+				<div class="inner">
+					<div class="box">
+						<div class="content">
+							<header class="align-center">
+								<p>탐구 보고서</p>
+								<h2></h2>
+							</header>
+							<img src="images/good.jpg" width="150" height="70">
+							<img src="images/33.jpg" width="600" height="70"> 
+							<div class="gallery">
+							<div class="effect">
+							<div class="image fit",class="effect">
+								<a href="https://drive.google.com/file/d/1n72jvcWnJ8gRu5KK_uPJaqz0Ad1fR8Yz/view?usp=sharing"><img src="images/coke.jpg" alt=""width="400" height="380"/></a>
+								<text align="center"><br><h2>콜라와 반응하는 물질은 어떤것이 있을까?</h2></text>
+							</div>
+							</div>
+							<div class="effect">
+							<div class="image fit",class="effect">
+								<a href="https://drive.google.com/file/d/1Ifoj9hEvoKM2b66lnEyo01mcwv7nQmBM/view?usp=sharing"><img src="images/milk.jpg" alt=""width="400" height="380" /></a>
+								<text align="center"><br><h2>우유로 플라스틱 만들기</h2></text>
+							</div>
+						</div>
+						</div>
+							
+						
+							<p>밑에 이미지를 클릭하면 저장할 수 있어요! </p>
+							<a href="https://drive.google.com/file/d/1n72jvcWnJ8gRu5KK_uPJaqz0Ad1fR8Yz/view?usp=sharing" ><div style="text-align:left;" > 
+							<img src="images/coke2.png" alt="" width="170" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp콜라와 반응하는 물질은 어떤것이 있을까?</b></h3><h4>&nbsp&nbsp&nbsp&nbsp&nbsp-탐구동기<br>&nbsp&nbsp&nbsp&nbsp&nbsp콜라에 멘토스를 넣으면 폭발이 일어나는데 다른 것들을 넣으면
+							어떻게 될지 궁금해서 실험을 해봤다.<br>&nbsp&nbsp&nbsp&nbsp&nbsp탐구 과정 및 결과<br>&nbsp&nbsp&nbsp&nbsp&nbsp-준비물:콜라,멘토스,껌,아이스크림<br>&nbsp&nbsp&nbsp&nbsp&nbsp-실험과정:<br>&nbsp&nbsp&nbsp&nbsp&nbsp1. 콜라를 100ml씩 종이컵에 붓는다<br>&nbsp&nbsp&nbsp&nbsp&nbsp2. 각각 음료에 멘토스,껌,아이스크림을 넣는다......</span> </h4>
+							</div><br>
+							
+							<a href="https://drive.google.com/file/d/1D4EdZlNFrywM41widXQW4gRe4h_I1IZM/view?usp=sharing" ><div style="text-align:left;" > 
+							<img src="images/lemon2.png" alt="" width="170" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp레몬으로 비밀편지 쓰기</b></h3><h4>&nbsp&nbsp&nbsp&nbsp&nbsp-탐구동기<br>&nbsp&nbsp&nbsp&nbsp&nbsp펜이 아닌 레몬으로 글씨를 써서 볼 수 있다는 것이 신기해서 
+직접 실험을 해보았다.  <br>&nbsp&nbsp&nbsp&nbsp&nbsp탐구 과정 및 결과<br>&nbsp&nbsp&nbsp&nbsp&nbsp-준비물:그릇, 레몬즙, 면봉, 종이, 초<br>&nbsp&nbsp&nbsp&nbsp&nbsp-실험과정:<br>&nbsp&nbsp&nbsp&nbsp&nbsp1.그릇에 레몬즙을 담는다.<br>&nbsp&nbsp&nbsp&nbsp&nbsp2.면봉을 레몬즙에 묻혀 종이에 글씨를 쓴다.......</span> </h4>
+							</div><br>
+							
+							<a href="https://drive.google.com/file/d/1QJ00D6Afbpx68Z5gUYaf1fnuMfWnI-aS/view?usp=sharing" ><div style="text-align:left;" > 
+							<img src="images/browning2.png" alt="" width="170" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp사과는 왜 갈변할까?</b></h3><h4>&nbsp&nbsp&nbsp&nbsp&nbsp-탐구동기<br>&nbsp&nbsp&nbsp&nbsp&nbsp어느날 먹다가 남은 사과의 색깔이 갈색으로
+변하는 것을 보고 왜 그럴까 궁금해서 실험을 하게 되었다. <br>&nbsp&nbsp&nbsp&nbsp&nbsp탐구 과정 및 결과<br>&nbsp&nbsp&nbsp&nbsp&nbsp-준비물:종이컵, 식초, 물, 소금물<br>&nbsp&nbsp&nbsp&nbsp&nbsp-실험과정:<br>&nbsp&nbsp&nbsp&nbsp&nbsp1.각각의 종이컵에 식초, 소금물, 물을 넣는다.<br>&nbsp&nbsp&nbsp&nbsp&nbsp2.그리고 한 개는 상온에 그냥 둔다.......</span> </h4>
+							</div><br>
+							
+							<a href="https://drive.google.com/file/d/1yMQM0fG7sdtJcae4tv6hccbQoBRPkIk8/view?usp=sharing" ><div style="text-align:left;" > 
+							<img src="images/iceice2.png" alt="" width="170" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp얼음은 왜 선풍기 앞에서 빨리 녹을까?</b></h3><h4>&nbsp&nbsp&nbsp&nbsp&nbsp-탐구동기<br>&nbsp&nbsp&nbsp&nbsp&nbsp평상시에는 아이스크림이 잘 녹지 않는데, 여름철 선풍기 앞에서 
+더 빨리 녹는 아이스크림 때문에 선풍기를 피해서.....<br>&nbsp&nbsp&nbsp&nbsp&nbsp탐구 과정 및 결과<br>&nbsp&nbsp&nbsp&nbsp&nbsp-준비물:얼음,선풍기<br>&nbsp&nbsp&nbsp&nbsp&nbsp-실험과정:<br>&nbsp&nbsp&nbsp&nbsp&nbsp1.얼음을 아무런 조건도 없이 그냥 녹인다.<br>&nbsp&nbsp&nbsp&nbsp&nbsp2.얼음이 완전히 녹았을 때 에 시간을 측정한다.......</span> </h4>
+							</div><br>
+							
+							<a href="https://drive.google.com/file/d/1Zrc0pOJuUbjV4slqR5GvyKqFLL_8U08-/view?usp=sharing" ><div style="text-align:left;" > 
+							<img src="images/chocolate2.png" alt="" width="170" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp초콜릿은 포장지에 따라 녹는 속도가 다를까?</b></h3><h4>&nbsp&nbsp&nbsp&nbsp&nbsp-탐구동기<br>&nbsp&nbsp&nbsp&nbsp&nbsp친구가 해외에 나갔다가 초콜릿을 선물로 사왔는데, 초콜릿은 왜 종이 상자나 박스로 되어있고 포장지는 알루미늄으로.....<br>&nbsp&nbsp&nbsp&nbsp&nbsp탐구 과정 및 결과<br>&nbsp&nbsp&nbsp&nbsp&nbsp-준비물:비닐랩, 알루미늄포일,종이,초콜릿<br>&nbsp&nbsp&nbsp&nbsp&nbsp-실험과정:<br>&nbsp&nbsp&nbsp&nbsp&nbsp1. 같은 크기의 비닐랩, 알루미늄포일,종이의 포장지를 준비해서 초콜릿을 각각의 포장지에 넣는다.<br>&nbsp&nbsp&nbsp&nbsp&nbsp2.시간별로 무엇이 가장 빨리 녹는지에 대해 탐구한다......</span> </h4>
+							</div><br>
+							
+							<a href="https://drive.google.com/file/d/10CyeaWjq0h8aBAKmof3KEviSoljtp4tB/view?usp=sharing" ><div style="text-align:left;" > 
+							<img src="images/hand2.png" alt="" width="170" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp손은 어떤 조건에서 물속에서 쭈그라들까?</b></h3><h4>&nbsp&nbsp&nbsp&nbsp&nbsp-탐구동기<br>&nbsp&nbsp&nbsp&nbsp&nbsp어느 날 목욕탕에 들어갔는데 얼마 되지 않아 손이 쭈그러드는 것을 발견하였다.
+늘 목욕탕에 들어서면 그래왔지만.....<br>&nbsp&nbsp&nbsp&nbsp&nbsp탐구 과정 및 결과<br>&nbsp&nbsp&nbsp&nbsp&nbsp-준비물:얼음이 든 물, 미지근한 물, 뜨거운 물, 손<br>&nbsp&nbsp&nbsp&nbsp&nbsp-실험과정:<br>&nbsp&nbsp&nbsp&nbsp&nbsp1. 다른 온도의 물을 통해, 어떤 온도에서 손이 빨리 쭈그러드는지 관찰한다.<br>&nbsp&nbsp&nbsp&nbsp&nbsp2. 다른 용액을 통해 어떤 용액에서 손이 빨리 쭈그러드는지 관찰한다......</span> </h4>
+							</div><br>
+							
+							<a href="https://drive.google.com/file/d/1t2qL_AKTYh9OU-YtvfJgoOP5NLvNVqS9/view?usp=sharing" ><div style="text-align:left;" > 
+							<img src="images/pill2.png" alt="" width="170" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp음료수가 약에 끼치는 영향</b></h3><h4>&nbsp&nbsp&nbsp&nbsp&nbsp-탐구동기<br>&nbsp&nbsp&nbsp&nbsp&nbsp전에 외할머니께서 약은 음료수와 같이 복용하면 안 된다고 하신 말씀을 듣고, 의문이 생겨 사이다로 실험 해 본 적이 있다....<br>&nbsp&nbsp&nbsp&nbsp&nbsp탐구 과정 및 결과<br>&nbsp&nbsp&nbsp&nbsp&nbsp-준비물:콜라, 사이다, 환타, 물, 알약<br>&nbsp&nbsp&nbsp&nbsp&nbsp-실험과정:<br>&nbsp&nbsp&nbsp&nbsp&nbsp1. 먼저 콜라, 환타, 사이다, 이 세가지의 탄산음료와 찬 생수 ,미지근한 생수, 뜨거운 생수, 그리고 오렌지 쥬스에 타이레놀... <br>&nbsp&nbsp&nbsp&nbsp&nbsp2. 그후, 이번엔 아는 분이 미국에서 사오신 ‘PE[TO-BISMOL’ 이란 미국에서 사온 소화제를 넣는다......</span> </h4>
+							</div><br>
+							
+							<a href="https://drive.google.com/file/d/158prcxwXCa2l10Qt1W17rQ-J7xY8H9qv/view?usp=sharing" ><div style="text-align:left;" > 
+							<img src="images/pencil2.png" alt="" width="170" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp볼펜자국을 지우려면?</b></h3><h4>&nbsp&nbsp&nbsp&nbsp&nbsp-탐구동기<br>&nbsp&nbsp&nbsp&nbsp&nbsp저번 쪽지시험때 볼펜으로 글을 쓰다가 옷에 묻었는데, 지워지지 않았다. 그자국이
+아직도 있어서 어떻게 하면 지울수있을까?.....<br>&nbsp&nbsp&nbsp&nbsp&nbsp탐구 과정 및 결과<br>&nbsp&nbsp&nbsp&nbsp&nbsp-준비물:볼펜 ,비누, 아세톤, 락스, 옷<br>&nbsp&nbsp&nbsp&nbsp&nbsp-실험과정:<br>&nbsp&nbsp&nbsp&nbsp&nbsp1. 먼저 볼펜자국이 남은 옷을 비누로 닦고, 아세톤으로 닦고 락스로 닦기로 하였다.<br>&nbsp&nbsp&nbsp&nbsp&nbsp2. 비누로 볼펜자국이 남은 옷을 문질러서 지울려했지만 잘 지워지지않았다.
+미세하게 색이 옅어지긴했다.</span> </h4>
+							</div><br>
+							 
+							<a href="https://drive.google.com/file/d/1_808LOiOLSf5fKyGgBsMsUN6qKV42Laq/view?usp=sharing" ><div style="text-align:left;" > 
+							<img src="images/copper2.png" alt="" width="170" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp구리의 녹슬음 정도와 녹슬음을 방지하는 방법은 무엇일까?</b></h3><h4>&nbsp&nbsp&nbsp&nbsp&nbsp-탐구동기<br>&nbsp&nbsp&nbsp&nbsp&nbsp 방학과제로 과학탐구 주제를 찾아보던 중, 구리의 녹슬음에 대한 주제를 우연히 보게 되었다.<br>&nbsp&nbsp&nbsp&nbsp&nbsp
+							 직접 구리의 녹슬음에 대해서 실험을 해보면 재밌을거 같았다. 구리의 녹슬음은 어떻게 나타날까? 하는 생각을 갖으며 <br>&nbsp&nbsp&nbsp&nbsp&nbsp이 실험을 시작하게 되었다.<br>&nbsp&nbsp&nbsp&nbsp&nbsp -실험 방법 및 절차 <br>&nbsp&nbsp&nbsp&nbsp&nbsp1.실험 준비물을 준비해둔다. <br>&nbsp&nbsp&nbsp&nbsp&nbsp컵에 담긴 액체 ( 물, 소금물, 콜라, 식초)에 구리를 넣어본다 
+						......</span> </h4>
+							</div><br>
+							
+							<a href="https://drive.google.com/file/d/1TZUdOh-68JyCtz8OWuznZxeamSLL4huq/view?usp=sharing" ><div style="text-align:left;" > 
+							<img src="images/coffee2.png" alt="" width="170" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp커피 가루가 퍼지는 확산</b></h3><h4>&nbsp&nbsp&nbsp&nbsp&nbsp-탐구동기<br>&nbsp&nbsp&nbsp&nbsp&nbsp엄마가 커피를 타고있는걸 보는데 커피 가루가 물에 퍼지는 걸 보고 탐구해보고 싶어졌다<br>&nbsp&nbsp&nbsp&nbsp&nbsp탐구 과정 및 결과<br>&nbsp&nbsp&nbsp&nbsp&nbsp-준비물:콜라,멘토스,껌,아이스크림<br>&nbsp&nbsp&nbsp&nbsp&nbsp확산이란 물질이 원자나 분자의 무질서한 열운동을 통해 농도(concentration)가 높은 영역에서 낮은 영역으로 평균적으로 <br>&nbsp&nbsp&nbsp&nbsp&nbsp이동하는 것이다.그래서 커피를 타게 되면 커피가루가 위에서 아래로 이동하게 되면 섞이는 것이다
+......</span> </h4>
+							</div><br>
+							
+							
+							
+							
+							<a href="https://drive.google.com/file/d/1Ifoj9hEvoKM2b66lnEyo01mcwv7nQmBM/view?usp=sharing" ><div style="text-align:left;" > 
+							<img src="images/milk2.png" alt="" width="170" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp우유로 플라스틱 만들기</b></h3><h4>&nbsp&nbsp&nbsp&nbsp&nbsp-탐구동기<br>&nbsp&nbsp&nbsp&nbsp&nbsp우유로 플라스틱을 만들 수 있는 원리가 무엇인지 알고 싶었다. 
+							<br>&nbsp&nbsp&nbsp&nbsp&nbsp탐구 과정 및 결과<br>&nbsp&nbsp&nbsp&nbsp&nbsp-준비물:우유 500 ml, 식초 100ml, 비커, 온도계, 스포이드, 틀, 주걱, 냄비, 버너, 거즈 <br>&nbsp&nbsp&nbsp&nbsp&nbsp-실험과정:<br>&nbsp&nbsp&nbsp&nbsp&nbsp1.우유를 냄비에 넣고 끓었을 때 식초를 넣는다.
+<br>&nbsp&nbsp&nbsp&nbsp&nbsp2. 식초와 우유를 잘 저어준 후 식힌다......</span> </h4>
+							</div><br>
+							
+							<a href="https://drive.google.com/file/d/1Mx_yj1SfAzEzipkIV7F-1QVfvgBkpXe_/view?usp=sharing" ><div style="text-align:left;" > 
+							<img src="images/water2.png" alt="" width="170" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp삼투압 현상을 눈으로 확인해보자</b></h3><h4>&nbsp&nbsp&nbsp&nbsp&nbsp-탐구동기<br>&nbsp&nbsp&nbsp&nbsp&nbsp전에 있던 과학 캠프에서 삼투압 현상 실험을 해보았다. 그래서 복습 겸 삼투압 현상을 자세하게 실험하고 공부해 보았다.<br>&nbsp&nbsp&nbsp&nbsp&nbsp탐구 과정 및 결과<br>&nbsp&nbsp&nbsp&nbsp&nbsp-준비물: 식초, 자, 달걀, 달걀이 들어갈 만한 컵 
+ <br>&nbsp&nbsp&nbsp&nbsp&nbsp-실험과정:<br>&nbsp&nbsp&nbsp&nbsp&nbsp1.자로 달걀의 크기를 잰다.
+<br>&nbsp&nbsp&nbsp&nbsp&nbsp2. 달걀을 컵에 넣는다......</span> </h4>
+							</div><br>
+							
+							<a href="https://drive.google.com/file/d/1SO_8oSJ2wLqEgxSMkHUhWBapU2owCg8q/view?usp=sharing" ><div style="text-align:left;" > 
+							<img src="images/salt2.png" alt="" width="170" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp소금의 음식물 부패 방지 관찰</b></h3><h4>&nbsp&nbsp&nbsp&nbsp&nbsp-탐구동기<br>&nbsp&nbsp&nbsp&nbsp&nbsp집에서 어머니께서 부패방지를 위해 야채 절임 또는 육류 및 생선의 보관을 위해 소금을 사용하는
+							것을 눈여겨 보아왔다.......
+							<br>&nbsp&nbsp&nbsp&nbsp&nbsp탐구 과정 및 결과<br>&nbsp&nbsp&nbsp&nbsp&nbsp-준비물:소금, 생선, 고기, 큰그릇, 저울, 쟁반, 카메라<br>&nbsp&nbsp&nbsp&nbsp&nbsp-실험과정:<br>&nbsp&nbsp&nbsp&nbsp&nbsp1.부패가 잘되는 음식물을 사와 준비한다. 
+<br>&nbsp&nbsp&nbsp&nbsp&nbsp2. 음식물에 소금을 뿌려 보관 및 뿌리지 않고 보관 등 분류하여 진행한다......</span> </h4>
+							</div><br>
+							
+							
+						
+							
+						
+							<p></p>
+
+							<p></p>
+
+							<p></p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+					</ul>
+				</div>
+				<div class="copyright">
+					&copy; Untitled. All rights reserved.
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+<style>
+body {
+  font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+  margin: 0px;
+  padding: 50px;
+  background: #e1e1e1;
+}
+.menu {
+  position: relative;
+  height: 60px;
+  background: #2b2f3a;
+  width: auto;
+}
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+.menu > ul {
+  position: relative;
+  display: block;
+  background: #000000;
+  width: 100%;
+  z-index: 500;
+}
+.menu:after, .menu > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.menu.align-right > ul > li {
+  float: right;
+}
+.menu.align-center ul {
+  text-align: center;
+}
+.menu.align-center ul ul {
+  text-align: left;
+}
+.menu > ul > li {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.menu > ul > #menu-button {
+  display: none;
+}
+.menu ul li a {
+  display: block;
+  font-family: Helvetica, sans-serif;
+  text-decoration: none;
+}
+.menu > ul > li > a {
+  font-size: 25px;
+  font-weight: bold;
+  padding: 20px 25px;
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-transition: color 0.25s ease-out;
+  -moz-transition: color 0.25s ease-out;
+  -ms-transition: color 0.25s ease-out;
+  -o-transition: color 0.25s ease-out;
+  transition: color 0.25s ease-out;
+}
+.menu > ul > li.sub > a {
+  padding-right: 32px;
+}
+.menu > ul > li:hover > a {
+  color: #ffffff;
+}
+.menu li.sub::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.menu > ul > li.sub::after {
+  right: 10px;
+  top: 20px;
+  border: 5px solid transparent;
+  border-top-color: #7a8189;
+}
+.menu > ul > li:hover::after {
+  border-top-color: #ffffff;
+}
+.menu ul ul {
+  position: absolute;
+  left: -9999px;
+  top: 70px;
+  opacity: 0;
+  -webkit-transition: opacity .3s ease, top .25s ease;
+  -moz-transition: opacity .3s ease, top .25s ease;
+  -ms-transition: opacity .3s ease, top .25s ease;
+  -o-transition: opacity .3s ease, top .25s ease;
+  transition: opacity .3s ease, top .25s ease;
+  z-index: 1000;
+}
+.menu ul ul ul {
+  top: 37px;
+  padding-left: 5px;
+}
+.menu ul ul li {
+  position: relative;
+}
+.menu > ul > li:hover > ul {
+  left: auto;
+  top: 44px;
+  opacity: 1;
+}
+.menu.align-right > ul > li:hover > ul {
+  left: auto;
+  right: 0;
+  opacity: 1;
+}
+.menu ul ul li:hover > ul {
+  left: 170px;
+  top: 0;
+  opacity: 1;
+}
+.menu.align-right ul ul li:hover > ul {
+  left: auto;
+  right: 170px;
+  top: 0;
+  opacity: 1;
+  padding-right: 5px;
+}
+.menu ul ul li a {
+  width: 130px;
+  border-bottom: 1px solid #eeeeee;
+  padding: 10px 20px;
+  font-size: 20px;
+  color: #000000;
+  background: #ffffff;
+  -webkit-transition: all .35s ease;
+  -moz-transition: all .35s ease;
+  -ms-transition: all .35s ease;
+  -o-transition: all .35s ease;
+  transition: all .35s ease;
+}
+.menu.align-right ul ul li a {
+  text-align: right;
+}
+.menu ul ul li:hover > a {
+  background: #f2f2f2;
+  color: #8c9195;
+}
+.menu ul ul li:last-child > a, .menu ul ul li.last > a {
+  border-bottom: 0;
+}
+.menu > ul > li > ul::after {
+  content: '';
+  border: 6px solid transparent;
+  width: 0;
+  height: 0;
+  border-bottom-color: #ffffff;
+  position: absolute;
+  top: -12px;
+  left: 30px;
+}
+.menu.align-right > ul > li > ul::after {
+  left: auto;
+  right: 30px;
+
+.menu.align-right ul ul li.sub::after {
+  border-left-color: transparent;
+  border-right-color: #9ea2a5;
+  right: auto;
+  left: 10px;
+}
+.menu ul ul li.sub:hover::after {
+  border-left-color: #ffffff;
+  right: -5px;
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.menu.align-right ul ul li.sub:hover::after {
+  border-right-color: #ffffff;
+  border-left-color: transparent;
+  left: -5px;
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+</style>
+
+		<title>과학 정보 포털 사이언스에듀</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<div class='menu'>
+			<ul>
+			<br>
+			&nbsp&nbsp&nbsp&nbsp&nbsp<a href="index.html"><img src="images/logoo.jpg" width="400" height="70"> </a>
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			
+			<li>
+					<a href='index.html'>HOME</a>
+				</li>
+				<li>
+					<a href='intro.html'>소개</a>
+				</li>
+				<li class='active sub'>
+					<a href='grade12.html'>학년</a>
+					<ul>
+						<li class='sub'>
+							<a href='grade12.html'>1,2학년</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='grade34.html'>3,4학년</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='grade5.html'>5학년</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='grade6.html'>6학년</a>
+							
+						</li>
+					</ul>
+				</li>
+				<li class='active sub'>
+					<a href='physics.html'>과목</a>
+					<ul>
+						<li class='sub'>
+							<a href='physics.html'>물리</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='chemistry.html'>화학</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='earth.html'>지구과학</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='life.html'>생명과학</a>
+							
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href='news.html'>뉴스</a>
+				</li>
+				<li>
+					<a href='13-03_list.jsp'>QnA</a>
+				</li>
+				
+			</ul>
+		</div>
+		</center>
+		<!-- One -->
+			<section id="One" class="wrapper style3">
+				<div class="inner">
+					<header class="align-center">
+						<p>과학 뉴스</p>
+						<h2>과학 뉴스</h2>
+					</header>
+				</div>
+			</section>
+
+		<!-- Two -->
+		
+				
+			<section id="two" class="wrapper style2">
+				<div class="inner">
+					<div class="box">
+						<div class="content">
+							<header class="align-center">
+								<p>과학뉴스</p>
+								<h2></h2>
+							</header>
+							
+							 
+							<div style="text-align:left;" > 
+							<img src="images/sky.jpg" alt="" width="280" height="200" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp벌처럼 나는 소형 로봇 첫 비행 성공</b></h3><h3>&nbsp&nbsp&nbsp&nbsp&nbsp연성 구동기가 날아다니고 멈추는 비행 제어</h3><br>
+							&nbsp&nbsp&nbsp&nbsp&nbsp하버드대 공학 및 응용과학대(SEAS)와 뷔스(Wyss) 생체 모방 연구소 연구팀이 개발해온, 부드러운 인공근육으로&nbsp&nbsp&nbsp&nbsp&nbsp<br>
+							
+							&nbsp&nbsp&nbsp&nbsp&nbsp구동되는 탄성 마이크로 로봇(RoboBee)이 첫 비행에 성공했다. 이 로봇은 소프트 구동기가 비행을 제어하는&nbsp&nbsp&nbsp&nbsp&nbsp<br>
+							&nbsp&nbsp&nbsp&nbsp&nbsp최초의 마이크로 로봇으로, ‘연질 근육’을 사용함으로써 벽에 부딪히거나 바닥에 떨어지거나 혹은 다른 로보비와 &nbsp&nbsp&nbsp&nbsp&nbsp<br>
+							&nbsp&nbsp&nbsp&nbsp&nbsp부딪혀도 손상을 입지 않는다.<br></span> </h4>
+							</div><br><br>
+							
+							
+							
+							&nbsp&nbsp&nbsp&nbsp&nbsp논문 제1저자인 유펭 첸(Yufeng Chen) SEAS 박사후 연구원은 “마이크로 로봇 분야에서는 <br>&nbsp&nbsp&nbsp&nbsp&nbsp탄성이 뛰어난 소프트 구동기(soft actuators)로 모바일 로봇을 만들기 위한 경쟁이 치열하다”고 말하고,
+							<br>&nbsp&nbsp&nbsp&nbsp&nbsp 그러나 이 분야 많은 사람들은소프트 구동기의 출력 밀도(power density)가 낮은 데다 제어가 어려워 비행 로봇에 적용하는데<br>
+							&nbsp&nbsp&nbsp&nbsp&nbsp회의적이었다”고 지적했다. 그는 “이번에 개발한 구동기는 공중을 날아다니는 호버링(hovering) 비행을 할 수 있는 충분한 &nbsp&nbsp&nbsp&nbsp&nbsp<br>
+							 &nbsp&nbsp&nbsp&nbsp&nbsp출력 밀도와 제어능력을 가지고 있다”고 밝혔다.&nbsp&nbsp&nbsp&nbsp&nbsp<br>
+							</div><br><br>
+							
+							<h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp유전체 탄성중합체로 연성 구동기 제작</h3></b><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp연구팀은 출력 밀도 문제를 해결하기 위해 데이비드 클라크(David Clarke) 재료공학과 교수실에서 개발한 전기 구동 소프트 액추에이터를 채용했다.
+							<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 연구팀은 전극 전도성을 개선해 이전에 유사한 로봇에 사용된 강성(rigid) 구동기와 동일한 500헤르츠로 구동기를 작동할 수 있었다.<br>
+							&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp연성 구동기를 다룰 때의 또 다른 과제는 시스템이 잠겨 불안정해지는 경향이 있다는 점이었다. &nbsp&nbsp&nbsp&nbsp&nbsp<br>
+							&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp이 문제를 해결하기 위해 경량의 기체에 수직의 견인줄을 매달아 구동기가 잠기지 않도록 했다.&nbsp&nbsp&nbsp&nbsp&nbsp<br>
+							<br><br><br>
+							
+							
+							<h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp날개와 구동기 수 늘려 성능 향상</h3></b><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp이 소형 로봇에서는 연성 구동기를 손쉽게 조립하고 교체할 수 있다. 연구팀은 다양한 비행능력을 시연하기 위해 여러 모델의 연성-구동 로보비를 제작했다.
+							<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 먼저 두 날개를 가진 모델은 지상에서 이륙할 수는 있으나 추가적인 제어는 할 수 없다는 단점이 있었다. <br>
+							&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp날개 네 개와 두 개의 구동기를 장착한 모델은 한 번의 비행에서 여러 번의 충돌 사고를 회피하고 복잡한 환경에서 비행할 수 있었다. &nbsp&nbsp&nbsp&nbsp&nbsp<br><br>
+							&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp논문 공저자인 엘리자베스 패럴 헬블링(Elizabeth Farrell Helbling) SEAS 전 대학원생은 “소형 경량 로봇의 장점은 외부 충격에 대한 복원력이 강하다는 점”이라며, &nbsp&nbsp&nbsp&nbsp&nbsp<br>
+							&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp“연성 구동기는 전통적인 구동기에 비해 충격을 잘 흡수할 수 있기 때문에 추가적인 이점이 있다”고 말했다. &nbsp&nbsp&nbsp&nbsp&nbsp<br>
+							&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp이런 장점은 예를 들어 허물어진 건물 더미 속을 날아다니며 수색과 구조를 할 때 유용하게 활용할 수 있다는 것. &nbsp&nbsp&nbsp&nbsp&nbsp<br>
+							<br><br><br>
+							
+							
+							<h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp“고성능 인조 근육 나오면 로봇 활용성 무한”</h3></b><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp연구팀은 이 소프트-구동 로봇의 효율 향상을 다음 목표를 잡고 있다. 현재 이 로봇은 기존의 비행 로봇에 비해 효율이 크게 낮은 편이다.
+							<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 논문 시니어 저자이자 뷔스 생체 모방 공학연구소 핵심 교수진인 로버트 우드(Robert Wood) 석좌교수는  <br>
+							&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp “인체 근육과 같은 속성과 전기적 활성화 기능을 갖춘 연성 구동기는 로봇공학에서 엄청난 도전”이라며,  &nbsp&nbsp&nbsp&nbsp&nbsp<br>
+							&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp“만약 고성능 인공근육을 만들 수 있다면 우리가 만드는 로봇의 활용 가능성은 무한하다”고 강조했다. &nbsp&nbsp&nbsp&nbsp&nbsp<br>
+							
+							<br><br><br><br><br>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+						
+							
+							
+							
+						
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+					</ul>
+				</div>
+				<div class="copyright">
+					&copy; Untitled. All rights reserved.
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

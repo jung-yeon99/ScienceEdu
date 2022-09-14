@@ -1,0 +1,406 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+<style>
+body {
+  font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+  margin: 0px;
+  padding: 50px;
+  background: #e1e1e1;
+}
+.menu {
+  position: relative;
+  height: 60px;
+  background: #2b2f3a;
+  width: auto;
+}
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+.menu > ul {
+  position: relative;
+  display: block;
+  background: #000000;
+  width: 100%;
+  z-index: 500;
+}
+.menu:after, .menu > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.menu.align-right > ul > li {
+  float: right;
+}
+.menu.align-center ul {
+  text-align: center;
+}
+.menu.align-center ul ul {
+  text-align: left;
+}
+.menu > ul > li {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.menu > ul > #menu-button {
+  display: none;
+}
+.menu ul li a {
+  display: block;
+  font-family: Helvetica, sans-serif;
+  text-decoration: none;
+}
+.menu > ul > li > a {
+  font-size: 25px;
+  font-weight: bold;
+  padding: 20px 25px;
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-transition: color 0.25s ease-out;
+  -moz-transition: color 0.25s ease-out;
+  -ms-transition: color 0.25s ease-out;
+  -o-transition: color 0.25s ease-out;
+  transition: color 0.25s ease-out;
+}
+.menu > ul > li.sub > a {
+  padding-right: 32px;
+}
+.menu > ul > li:hover > a {
+  color: #ffffff;
+}
+.menu li.sub::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.menu > ul > li.sub::after {
+  right: 10px;
+  top: 20px;
+  border: 5px solid transparent;
+  border-top-color: #7a8189;
+}
+.menu > ul > li:hover::after {
+  border-top-color: #ffffff;
+}
+.menu ul ul {
+  position: absolute;
+  left: -9999px;
+  top: 70px;
+  opacity: 0;
+  -webkit-transition: opacity .3s ease, top .25s ease;
+  -moz-transition: opacity .3s ease, top .25s ease;
+  -ms-transition: opacity .3s ease, top .25s ease;
+  -o-transition: opacity .3s ease, top .25s ease;
+  transition: opacity .3s ease, top .25s ease;
+  z-index: 1000;
+}
+.menu ul ul ul {
+  top: 37px;
+  padding-left: 5px;
+}
+.menu ul ul li {
+  position: relative;
+}
+.menu > ul > li:hover > ul {
+  left: auto;
+  top: 44px;
+  opacity: 1;
+}
+.menu.align-right > ul > li:hover > ul {
+  left: auto;
+  right: 0;
+  opacity: 1;
+}
+.menu ul ul li:hover > ul {
+  left: 170px;
+  top: 0;
+  opacity: 1;
+}
+.menu.align-right ul ul li:hover > ul {
+  left: auto;
+  right: 170px;
+  top: 0;
+  opacity: 1;
+  padding-right: 5px;
+}
+.menu ul ul li a {
+  width: 130px;
+  border-bottom: 1px solid #eeeeee;
+  padding: 10px 20px;
+  font-size: 20px;
+  color: #000000;
+  background: #ffffff;
+  -webkit-transition: all .35s ease;
+  -moz-transition: all .35s ease;
+  -ms-transition: all .35s ease;
+  -o-transition: all .35s ease;
+  transition: all .35s ease;
+}
+.menu.align-right ul ul li a {
+  text-align: right;
+}
+.menu ul ul li:hover > a {
+  background: #f2f2f2;
+  color: #8c9195;
+}
+.menu ul ul li:last-child > a, .menu ul ul li.last > a {
+  border-bottom: 0;
+}
+.menu > ul > li > ul::after {
+  content: '';
+  border: 6px solid transparent;
+  width: 0;
+  height: 0;
+  border-bottom-color: #ffffff;
+  position: absolute;
+  top: -12px;
+  left: 30px;
+}
+.menu.align-right > ul > li > ul::after {
+  left: auto;
+  right: 30px;
+
+.menu.align-right ul ul li.sub::after {
+  border-left-color: transparent;
+  border-right-color: #9ea2a5;
+  right: auto;
+  left: 10px;
+}
+.menu ul ul li.sub:hover::after {
+  border-left-color: #ffffff;
+  right: -5px;
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.menu.align-right ul ul li.sub:hover::after {
+  border-right-color: #ffffff;
+  border-left-color: transparent;
+  left: -5px;
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+</style>
+
+		<title>과학 정보 포털 사이언스에듀</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<div class='menu'>
+			<ul>
+			<br>
+			&nbsp&nbsp&nbsp&nbsp&nbsp<a href="index.html"><img src="images/logoo.jpg" width="400" height="70"> </a>
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			
+			<li>
+					<a href='index.html'>HOME</a>
+				</li>
+				<li>
+					<a href='intro.html'>소개</a>
+				</li>
+				<li class='active sub'>
+					<a href='grade12.html'>학년</a>
+					<ul>
+						<li class='sub'>
+							<a href='grade12.html'>1,2학년</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='grade34.html'>3,4학년</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='grade5.html'>5학년</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='grade6.html'>6학년</a>
+							
+						</li>
+					</ul>
+				</li>
+				<li class='active sub'>
+					<a href='physics.html'>과목</a>
+					<ul>
+						<li class='sub'>
+							<a href='physics.html'>물리</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='chemistry.html'>화학</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='earth.html'>지구과학</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='life.html'>생명과학</a>
+							
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href='news.html'>뉴스</a>
+				</li>
+				<li>
+					<a href='13-03_list.jsp'>QnA</a>
+				</li>
+				
+			</ul>
+		</div>
+		</center>
+		<!-- One -->
+			<section id="One" class="wrapper style3">
+				<div class="inner">
+					<header class="align-center">
+						<p>과학 뉴스</p>
+						<h2>과학 뉴스</h2>
+					</header>
+				</div>
+			</section>
+
+		<!-- Two -->
+		
+				
+			<section id="two" class="wrapper style2">
+				<div class="inner">
+					<div class="box">
+						<div class="content">
+							<header class="align-center">
+								<p>과학뉴스</p>
+								<h2></h2>
+							</header>
+							
+							 
+							<div style="text-align:left;" > 
+							<img src="images/robot.jpg" alt="" width="280" height="200" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp"AI, 인간 자유와 권리, 존엄성 보장해야" 첫 AI 윤리원칙 제정</b></h3><h3>&nbsp&nbsp&nbsp&nbsp&nbsp한국 정부가 나날이 커져가는 인공지능(AI)의 중요성과 윤리 원칙을 11일 발표했다. </h3><br>
+							&nbsp&nbsp&nbsp&nbsp&nbsp정부가 나날이 중요성이 커지는 인공지능(AI)과 이를 활용하는 사회에 대비해<br>&nbsp&nbsp&nbsp&nbsp&nbsp사람 중심과 투명성, 책임성과 안전성, 차별금지 등
+							
+							AI 개발기업과 이용자가 지켜야 할 원칙을 담은 AI 윤리 원칙을 발표했다.<br>&nbsp&nbsp&nbsp&nbsp&nbsp기업과 국제사회에서 AI 윤리 원칙을 마련한 적은 있으나 &nbsp&nbsp&nbsp&nbsp&nbsp<br>
+							&nbsp&nbsp&nbsp&nbsp&nbsp정부 차원에서 AI 윤리 원칙을 제정해 발표한 것은 이번이 처음이다.&nbsp&nbsp&nbsp&nbsp&nbsp<br>
+							</span> </h4>
+							</div><br><br>
+							
+							
+							
+							<h3><b>AI 윤리 원칙 제정</b></h3><br>방통위와 KISDI는 AI 원칙 마련을 위해 지난해 10회에 걸쳐 ‘지능정보화 이용자 포럼’을 열고 기초 연구를 수행했다. <br>
+							이후 원칙의 주요 내용에 대해 삼성전자와 KT, SKT, LG유플러스, 카카오, 구글코리아, 페이스북코리아, 한국 IBM, 한국 마이크로소프트 등 정보통신기술(ICT) 기업과 AI 윤리 전문가들의 의견 수렴과정을 거쳤다. 원칙에는 사람의 자유와 권리를 보장하고 인간의 존엄성을 보장해야 한다는 내용이 담겼다. <br><br>
+							안전을 위해 모두가 노력하고 피해를 대비한 체계를 서비스 제공자와 이용자가 수립하고 운영할 것도 권고했다.<br>
+							AI가 불공평이나 격차를 초래할 수 있다는 점을 인식하고 AI를 개발할 때 모든 단계에서 차별 요소를 최소화하는 노력도 강조했다. <br>
+							마지막으로 AI는 모든 과정에서 개인정보와 프라이버시를 보호해야 하며 구성원들은 기술과 프라이버시 보호 사이 균형을 위해 지속적으로 의견을 교환하도록 했다.<br><br>
+							정부가 AI 원칙을 마련한 것은 맞춤형 뉴스 추천, 인공지능(AI) 스피커, AI 면접처럼 사회 속 AI 서비스가 일상화되며<br> 
+							공정하고 책임 있는 AI에 대한 필요성을 제기하는 목소리도 커지고 있기 때문이다.<br>
+							특히 AI가 정부의 새로운 국가전략산업으로 꼽히면서 AI 윤리 문제도 덩달아 커지고 있다. <br><br>
+							국제사회는 AI 윤리 원칙을 만들며 이를 대비하고 있다. <br>
+							유럽연합(EU)은 올해 4월 ‘신뢰 가능한 AI 윤리 가이드라인’을 내놨고 경제협력개발기구(OECD)도 올해 5월 ‘OECD AI 이사회 권고안’을 회원국 만장일치로 채택했다. <br><br>
+							아래는 AI 원칙 전문이다. <br>
+							
+							
+							<br><br>
+							
+							<h3><b>이용자 중심의 지능정보사회를 위한 원칙</b></h3><br><br>
+							<h3>1. 사람 중심의 서비스 제공 원칙 </h3><br>지능정보서비스의 제공과 이용은 사람을 중심으로 그 기본적 자유와 권리를 보장하고 인간의 존엄성을 보호할 수 있는 방향으로 이루어져야 한다.<br>
+							지능정보사회의 구성원들은 각자의 자율성을 최대한 보장받으면서, 안전하고, 투명하며, 모든 사람이 고루 혜택을 누릴 수 있는 서비스가 이루어지는 환경을 조성하도록 노력한다.<br>
+							<br><br>
+							
+							<h3>2. 투명성과 설명가능성 원칙</h3><br>지능정보서비스에 포함된 서비스 체계와 작동방식이 이용자에게 중대한 영향을 끼칠 경우, 기업의 정당한 이익을 침해하지 않는 범위에서 이용자가 이해할 수 있도록 관련 정보를 작성한다.
+							지능정보서비스가 인간의 신체, 자유, 재산 및 기타 기본권에 피해를 유발하였을 때, 기술적으로 가능한 범위에서 이용자에게 예측, 추천 및 결정의 기초로 사용한 시스템상의 주요 요인을 설명할 수 있어야 한다.<br>
+							<br><br>
+							
+							<h3>3. 책임성 원칙</h3><br>지능정보사회의 구성원들은 지능정보서비스의 올바른 기능과 사람 중심 가치의 보장을 위한 공동의 책임을 인식하고, 관련한 법령과 계약을 준수한다. <br>
+							서비스의 제공과 이용으로 인해 발생한 타인의 권익 침해에 대한 법적․사회적․윤리적 책임을 다할 수 있도록, 지능정보사회 구성원들은 지속적인 의견 교환에 참여한다.<br>
+							<br><br>
+							
+							<h3>4. 안전성 원칙</h3><br>안전하고 신뢰 가능한 지능정보서비스의 개발과 이용을 위해 지능정보사회 참여자 모두가 노력한다.<br>
+							지능정보서비스가 초래할 수 있는 피해에 대한 복구 방안을 사전에 확보하기 위한 노력으로서, 제공자와 이용자는 상호 협의 하에 그에 대한 자율적인 대비 체계를 수립하고 운영한다.<br>
+							<br><br>
+							
+							<h3>5. 차별 금지 원칙</h3><br>지능정보사회의 구성원들은 지능정보서비스가 사회적․경제적 불공평이나 격차를 초래할 수 있다는 점을 인식하고, 기술 사용에 있어 사회적 다양성을 고려한다.<br>
+							알고리즘 설계, 데이터의 수집과 입력 및 알고리즘 실행 등 개발과 사용의 모든 단계에서 차별적 요소를 최소화할 수 있도록 노력한다.<br>
+							<br><br>
+							
+							<h3>6. 참여 원칙</h3><br>지능정보사회의 구성원들은 공적인 이용자 정책 과정에 차별 없이 참여할 수 있다.<br>
+							공적 주체는 지능정보서비스의 이용과 관련하여 제공자와 이용자가 실질적으로 의견을 제시할 수 있는 정기적인 통로를 조성하여야 한다.<br>
+							<br><br>
+							
+							<h3>7. 프라이버시와 데이터 거버넌스</h3><br>지능정보사회 구성원들은 서비스의 개발, 공급 및 이용의 전 과정에서 개인정보 및 프라이버시를 보호하며, <br>
+							특히 지능정보서비스의 제공과 이용 과정에서 데이터 사용이 프라이버시에 미치는 부정적인 영향을 최소화하도록 노력한다.<br>
+							지능정보사회 구성원들은 데이터의 활용을 통한 기술적 이익의 향유와 프라이버시 보호 사이의 균형을 위해, 지속적인 의견 교환에 참여한다.<br>
+							<br><br>
+							
+							
+							
+							
+							
+							
+							 출처 : 동아 사이언스<br><br><br><br>
+							</div>
+							
+							
+							
+							
+							
+							
+							
+						
+							
+							
+							
+						
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+					</ul>
+				</div>
+				<div class="copyright">
+					&copy; Untitled. All rights reserved.
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

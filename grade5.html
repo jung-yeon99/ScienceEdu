@@ -1,0 +1,382 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+<style>
+body {
+  font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+  margin: 0px;
+  padding: 50px;
+  background: #e1e1e1;
+}
+.menu {
+  position: relative;
+  height: 60px;
+  background: #2b2f3a;
+  width: auto;
+}
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+.menu > ul {
+  position: relative;
+  display: block;
+  background: #000000;
+  width: 100%;
+  z-index: 500;
+}
+.menu:after, .menu > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.menu.align-right > ul > li {
+  float: right;
+}
+.menu.align-center ul {
+  text-align: center;
+}
+.menu.align-center ul ul {
+  text-align: left;
+}
+.menu > ul > li {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.menu > ul > #menu-button {
+  display: none;
+}
+.menu ul li a {
+  display: block;
+  font-family: Helvetica, sans-serif;
+  text-decoration: none;
+}
+.menu > ul > li > a {
+  font-size: 25px;
+  font-weight: bold;
+  padding: 20px 25px;
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-transition: color 0.25s ease-out;
+  -moz-transition: color 0.25s ease-out;
+  -ms-transition: color 0.25s ease-out;
+  -o-transition: color 0.25s ease-out;
+  transition: color 0.25s ease-out;
+}
+.menu > ul > li.sub > a {
+  padding-right: 32px;
+}
+.menu > ul > li:hover > a {
+  color: #ffffff;
+}
+.menu li.sub::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.menu > ul > li.sub::after {
+  right: 10px;
+  top: 20px;
+  border: 5px solid transparent;
+  border-top-color: #7a8189;
+}
+.menu > ul > li:hover::after {
+  border-top-color: #ffffff;
+}
+.menu ul ul {
+  position: absolute;
+  left: -9999px;
+  top: 70px;
+  opacity: 0;
+  -webkit-transition: opacity .3s ease, top .25s ease;
+  -moz-transition: opacity .3s ease, top .25s ease;
+  -ms-transition: opacity .3s ease, top .25s ease;
+  -o-transition: opacity .3s ease, top .25s ease;
+  transition: opacity .3s ease, top .25s ease;
+  z-index: 1000;
+}
+.menu ul ul ul {
+  top: 37px;
+  padding-left: 5px;
+}
+.menu ul ul li {
+  position: relative;
+}
+.menu > ul > li:hover > ul {
+  left: auto;
+  top: 44px;
+  opacity: 1;
+}
+.menu.align-right > ul > li:hover > ul {
+  left: auto;
+  right: 0;
+  opacity: 1;
+}
+.menu ul ul li:hover > ul {
+  left: 170px;
+  top: 0;
+  opacity: 1;
+}
+.menu.align-right ul ul li:hover > ul {
+  left: auto;
+  right: 170px;
+  top: 0;
+  opacity: 1;
+  padding-right: 5px;
+}
+.menu ul ul li a {
+  width: 130px;
+  border-bottom: 1px solid #eeeeee;
+  padding: 10px 20px;
+  font-size: 20px;
+  color: #000000;
+  background: #ffffff;
+  -webkit-transition: all .35s ease;
+  -moz-transition: all .35s ease;
+  -ms-transition: all .35s ease;
+  -o-transition: all .35s ease;
+  transition: all .35s ease;
+}
+.menu.align-right ul ul li a {
+  text-align: right;
+}
+.menu ul ul li:hover > a {
+  background: #f2f2f2;
+  color: #8c9195;
+}
+.menu ul ul li:last-child > a, .menu ul ul li.last > a {
+  border-bottom: 0;
+}
+.menu > ul > li > ul::after {
+  content: '';
+  border: 6px solid transparent;
+  width: 0;
+  height: 0;
+  border-bottom-color: #ffffff;
+  position: absolute;
+  top: -12px;
+  left: 30px;
+}
+.menu.align-right > ul > li > ul::after {
+  left: auto;
+  right: 30px;
+
+.menu.align-right ul ul li.sub::after {
+  border-left-color: transparent;
+  border-right-color: #9ea2a5;
+  right: auto;
+  left: 10px;
+}
+.menu ul ul li.sub:hover::after {
+  border-left-color: #ffffff;
+  right: -5px;
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.menu.align-right ul ul li.sub:hover::after {
+  border-right-color: #ffffff;
+  border-left-color: transparent;
+  left: -5px;
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+</style>
+
+		<title>과학 정보 포털 사이언스에듀</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<div class='menu'>
+			<ul>
+			<br>
+			&nbsp&nbsp&nbsp&nbsp&nbsp<a href="index.html"><img src="images/logoo.jpg" width="400" height="70"> </a>
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			
+			<li>
+					<a href='index.html'>HOME</a>
+				</li>
+				<li>
+					<a href='intro.html'>소개</a>
+				</li>
+				<li class='active sub'>
+					<a href='grade12.html'>학년</a>
+					<ul>
+						<li class='sub'>
+							<a href='grade12.html'>1,2학년</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='grade34.html'>3,4학년</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='grade5.html'>5학년</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='grade6.html'>6학년</a>
+							
+						</li>
+					</ul>
+				</li>
+				<li class='active sub'>
+					<a href='physics.html'>과목</a>
+					<ul>
+						<li class='sub'>
+							<a href='physics.html'>물리</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='chemistry.html'>화학</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='earth.html'>지구과학</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='life.html'>생명과학</a>
+							
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href='news.html'>뉴스</a>
+				</li>
+				<li>
+					<a href='13-03_list.jsp'>QnA</a>
+				</li>
+				
+				
+				
+			</ul>
+		</div>
+		</center>
+
+		<!-- One -->
+			<section id="One" class="wrapper style3">
+				<div class="inner">
+					<header class="align-center">
+						<p>5 th Grade</p>
+						<h2>초등학교 &nbsp 5&nbsp학년</h2>
+					</header>
+				</div>
+			</section>
+
+		<!-- Two -->
+		
+				
+			<section id="two" class="wrapper style2">
+				<div class="inner">
+					<div class="box">
+						<div class="content">
+							<header class="align-center">
+								<p>탐구 보고서</p>
+								<h2></h2>
+							</header>
+							<img src="images/good.jpg" width="150" height="70"> 
+							<img src="images/33.jpg" width="600" height="70">
+							<div class="gallery">
+							<div class="effect">
+							<div class="image fit",class="effect">
+							
+								<a href="https://drive.google.com/file/d/1FDMRMFh3XLb6zf_FJ394fdfsXbUEzauO/view?usp=sharing"><img src="images/fish.jpg" alt="" width="606px" height="342px"/></a>
+								<text align="center"><br><h2>깊은 바다 물고기는 어떻게 수압을 견딜까?</h2></text>
+							</div>
+							</div>
+							<div class="effect">
+							<div class="image fit",class="effect">
+								<a href="https://drive.google.com/file/d/1TZUdOh-68JyCtz8OWuznZxeamSLL4huq/view?usp=sharing"><img src="images/coffee.jpg" alt="" width="606px" height="342px"/></a>
+								<text align="center"><br><h2>커피 가루가 퍼지는 확산</h2></text>
+							</div>
+						</div>
+						</div>
+						
+						<p>밑에 이미지를 클릭하면 저장할 수 있어요! </p>
+						
+						
+						
+						<a href="https://drive.google.com/file/d/16P_jP26GJjrF0uyzxghQmdEKzADmRb_9/view?usp=sharing" ><div style="text-align:left;" > 
+							<img src="images/star2.png" alt="" width="170" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp별에 관한 것</b></h3><h4>&nbsp&nbsp&nbsp&nbsp&nbsp-탐구동기<br>&nbsp&nbsp&nbsp&nbsp&nbsp까만 밤하늘을 보니 수 없이 반짝이는 별들이 내 눈 안으로 들어 왔다, 무척이나
+								예뻤다. 하지만 별에 대해서 하나도 아는 것이 없어서<br>&nbsp&nbsp&nbsp&nbsp&nbsp 이번 기회를 통해서 별자리 및 별에 관한 자료를 찾아보면서 지식도 쌓을 겸, 많은 것을 깨닫기로 했다.
+						<br>&nbsp&nbsp&nbsp&nbsp&nbsp탐구 과정 및 결과<br>&nbsp&nbsp&nbsp&nbsp&nbsp 1.&nbsp계절별 별자리예로부터 사람들은 하늘의 별들은 신화나 전설에 나오는 신, 영웅, 동물. 등의 모양으로가상하여 이름을 붙였는데<br>&nbsp&nbsp&nbsp&nbsp&nbsp 이러한 별의 무리를 별자리 또는 성좌라고 합니다 현재까지 발견된 별자리는 88개가 있으며, 계절에 따라 잘 보이는 별자리가 <br>&nbsp&nbsp&nbsp&nbsp&nbsp각각 다릅니다.....</span> </h4>
+							</div><br>
+							
+						<a href="https://drive.google.com/file/d/1_808LOiOLSf5fKyGgBsMsUN6qKV42Laq/view?usp=sharing" ><div style="text-align:left;" > 
+							<img src="images/copper2.png" alt="" width="170" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp구리의 녹슬음 정도와 녹슬음을 방지하는 방법은 무엇일까?</b></h3><h4>&nbsp&nbsp&nbsp&nbsp&nbsp-탐구동기<br>&nbsp&nbsp&nbsp&nbsp&nbsp 방학과제로 과학탐구 주제를 찾아보던 중, 구리의 녹슬음에 대한 주제를 우연히 보게 되었다.<br>&nbsp&nbsp&nbsp&nbsp&nbsp
+							 직접 구리의 녹슬음에 대해서 실험을 해보면 재밌을거 같았다. 구리의 녹슬음은 어떻게 나타날까? 하는 생각을 갖으며 <br>&nbsp&nbsp&nbsp&nbsp&nbsp이 실험을 시작하게 되었다.<br>&nbsp&nbsp&nbsp&nbsp&nbsp -실험 방법 및 절차 <br>&nbsp&nbsp&nbsp&nbsp&nbsp1.실험 준비물을 준비해둔다. <br>&nbsp&nbsp&nbsp&nbsp&nbsp컵에 담긴 액체 ( 물, 소금물, 콜라, 식초)에 구리를 넣어본다 
+						......</span> </h4>
+							</div><br>
+							
+						<a href="https://drive.google.com/file/d/1PLLa58-w07Tu1sxaLfUpokWynOmUEbmn/view?usp=sharing" ><div style="text-align:left;" > 
+							<img src="images/suger2.png" alt="" width="170" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp설탕은 왜 우리몸에 해로운 걸까?</b></h3><h4>&nbsp&nbsp&nbsp&nbsp&nbsp-탐구동기<br>&nbsp&nbsp&nbsp&nbsp&nbsp엄마가 설탕이 해롭다고 하셧는데 왜 설탕이 해로운지 궁금해서 탐구보고서를 쓸 때 하기로 햇다. 그래서 하게 되엇다.<br>&nbsp&nbsp&nbsp&nbsp&nbsp탐구 과정 및 결과<br>&nbsp&nbsp&nbsp&nbsp&nbsp 결과: 1.면역력을 떨어 뜨린다.하루에 100~150g의 설탕 먹는 아이들을 대상으로 조사한 결과, 면역세포 마이크로파지가 5시간 이상<br>&nbsp&nbsp&nbsp&nbsp&nbsp 꼼짝도 않고 있음이 확인됐다.또 토마토의 항암작용 성분인 라이코펜도 설탕과 함께 먹으면 효과가 떨어진다는 연구 결과가 있다.<br>&nbsp&nbsp&nbsp&nbsp&nbsp아이들의 잦은 감기도 이런 설탕 성분의 과다 섭취에서 원인을 찾을 수 있다.......</span> </h4>
+							</div><br>
+							
+						<a href="https://drive.google.com/file/d/1FDMRMFh3XLb6zf_FJ394fdfsXbUEzauO/view?usp=sharing" ><div style="text-align:left;" > 
+							<img src="images/fish2.png" alt="" width="170" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp깊은 바다 물고기는 어떻게 수압을 견딜까?</b></h3><h4>&nbsp&nbsp&nbsp&nbsp&nbsp-탐구동기<br>&nbsp&nbsp&nbsp&nbsp&nbsp티비를 보다가 바다 물고기들에 대해 보게 되었는데 문뜩 깊은 바다는 수압이 쎌텐데 어떻게견디나 궁금해서 탐구하게 되었다<br>&nbsp&nbsp&nbsp&nbsp&nbsp탐구 과정 및 결과<br>&nbsp&nbsp&nbsp&nbsp&nbsp심해 생물은 어두운 바닷속 수km 깊이에서 엄청난 수압을 견디며 살아가고 있습니다.<br>&nbsp&nbsp&nbsp&nbsp&nbsp이들은 태평양과 대서양 등 바다곳곳에서 채집한 수백 가지 표본에서 발견되고 있는데 생물들은 매우 다양해 가까운 장소에서 <br>&nbsp&nbsp&nbsp&nbsp&nbsp 얻어진 표본이라고 할지라도 중복되는 경우가 거의 없다고 합니다<br>&nbsp&nbsp&nbsp&nbsp&nbsp1. 각 동물의 표본들은 매우 토속적이며 이것은 태평양이나 카리브 해의 섬에서 발견되는 동물들이 다른 곳에서 살지 않는다는......</span> </h4>
+							</div><br>
+							
+						<a href="https://drive.google.com/file/d/1TZUdOh-68JyCtz8OWuznZxeamSLL4huq/view?usp=sharing" ><div style="text-align:left;" > 
+							<img src="images/coffee2.png" alt="" width="170" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp커피 가루가 퍼지는 확산</b></h3><h4>&nbsp&nbsp&nbsp&nbsp&nbsp-탐구동기<br>&nbsp&nbsp&nbsp&nbsp&nbsp엄마가 커피를 타고있는걸 보는데 커피 가루가 물에 퍼지는 걸 보고 탐구해보고 싶어졌다<br>&nbsp&nbsp&nbsp&nbsp&nbsp탐구 과정 및 결과<br>&nbsp&nbsp&nbsp&nbsp&nbsp-준비물:콜라,멘토스,껌,아이스크림<br>&nbsp&nbsp&nbsp&nbsp&nbsp확산이란 물질이 원자나 분자의 무질서한 열운동을 통해 농도(concentration)가 높은 영역에서 낮은 영역으로 평균적으로 <br>&nbsp&nbsp&nbsp&nbsp&nbsp이동하는 것이다.그래서 커피를 타게 되면 커피가루가 위에서 아래로 이동하게 되면 섞이는 것이다
+......</span> </h4>
+							</div><br>
+							
+							
+						
+							<p></p>
+
+							<p></p>
+
+							<p></p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+					</ul>
+				</div>
+				<div class="copyright">
+					&copy; Untitled. All rights reserved.
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

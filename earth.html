@@ -1,0 +1,393 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+<style>
+body {
+  font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+  margin: 0px;
+  padding: 50px;
+  background: #e1e1e1;
+}
+.menu {
+  position: relative;
+  height: 60px;
+  background: #2b2f3a;
+  width: auto;
+}
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+.menu > ul {
+  position: relative;
+  display: block;
+  background: #000000;
+  width: 100%;
+  z-index: 500;
+}
+.menu:after, .menu > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.menu.align-right > ul > li {
+  float: right;
+}
+.menu.align-center ul {
+  text-align: center;
+}
+.menu.align-center ul ul {
+  text-align: left;
+}
+.menu > ul > li {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.menu > ul > #menu-button {
+  display: none;
+}
+.menu ul li a {
+  display: block;
+  font-family: Helvetica, sans-serif;
+  text-decoration: none;
+}
+.menu > ul > li > a {
+  font-size: 25px;
+  font-weight: bold;
+  padding: 20px 25px;
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-transition: color 0.25s ease-out;
+  -moz-transition: color 0.25s ease-out;
+  -ms-transition: color 0.25s ease-out;
+  -o-transition: color 0.25s ease-out;
+  transition: color 0.25s ease-out;
+}
+.menu > ul > li.sub > a {
+  padding-right: 32px;
+}
+.menu > ul > li:hover > a {
+  color: #ffffff;
+}
+.menu li.sub::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.menu > ul > li.sub::after {
+  right: 10px;
+  top: 20px;
+  border: 5px solid transparent;
+  border-top-color: #7a8189;
+}
+.menu > ul > li:hover::after {
+  border-top-color: #ffffff;
+}
+.menu ul ul {
+  position: absolute;
+  left: -9999px;
+  top: 70px;
+  opacity: 0;
+  -webkit-transition: opacity .3s ease, top .25s ease;
+  -moz-transition: opacity .3s ease, top .25s ease;
+  -ms-transition: opacity .3s ease, top .25s ease;
+  -o-transition: opacity .3s ease, top .25s ease;
+  transition: opacity .3s ease, top .25s ease;
+  z-index: 1000;
+}
+.menu ul ul ul {
+  top: 37px;
+  padding-left: 5px;
+}
+.menu ul ul li {
+  position: relative;
+}
+.menu > ul > li:hover > ul {
+  left: auto;
+  top: 44px;
+  opacity: 1;
+}
+.menu.align-right > ul > li:hover > ul {
+  left: auto;
+  right: 0;
+  opacity: 1;
+}
+.menu ul ul li:hover > ul {
+  left: 170px;
+  top: 0;
+  opacity: 1;
+}
+.menu.align-right ul ul li:hover > ul {
+  left: auto;
+  right: 170px;
+  top: 0;
+  opacity: 1;
+  padding-right: 5px;
+}
+.menu ul ul li a {
+  width: 130px;
+  border-bottom: 1px solid #eeeeee;
+  padding: 10px 20px;
+  font-size: 20px;
+  color: #000000;
+  background: #ffffff;
+  -webkit-transition: all .35s ease;
+  -moz-transition: all .35s ease;
+  -ms-transition: all .35s ease;
+  -o-transition: all .35s ease;
+  transition: all .35s ease;
+}
+.menu.align-right ul ul li a {
+  text-align: right;
+}
+.menu ul ul li:hover > a {
+  background: #f2f2f2;
+  color: #8c9195;
+}
+.menu ul ul li:last-child > a, .menu ul ul li.last > a {
+  border-bottom: 0;
+}
+.menu > ul > li > ul::after {
+  content: '';
+  border: 6px solid transparent;
+  width: 0;
+  height: 0;
+  border-bottom-color: #ffffff;
+  position: absolute;
+  top: -12px;
+  left: 30px;
+}
+.menu.align-right > ul > li > ul::after {
+  left: auto;
+  right: 30px;
+
+.menu.align-right ul ul li.sub::after {
+  border-left-color: transparent;
+  border-right-color: #9ea2a5;
+  right: auto;
+  left: 10px;
+}
+.menu ul ul li.sub:hover::after {
+  border-left-color: #ffffff;
+  right: -5px;
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.menu.align-right ul ul li.sub:hover::after {
+  border-right-color: #ffffff;
+  border-left-color: transparent;
+  left: -5px;
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+</style>
+
+		<title>과학 정보 포털 사이언스에듀</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<div class='menu'>
+			<ul>
+			<br>
+			&nbsp&nbsp&nbsp&nbsp&nbsp<a href="index.html"><img src="images/logoo.jpg" width="400" height="70"> </a>
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			
+			<li>
+					<a href='index.html'>HOME</a>
+				</li>
+				<li>
+					<a href='intro.html'>소개</a>
+				</li>
+				<li class='active sub'>
+					<a href='grade12.html'>학년</a>
+					<ul>
+						<li class='sub'>
+							<a href='grade12.html'>1,2학년</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='grade34.html'>3,4학년</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='grade5.html'>5학년</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='grade6.html'>6학년</a>
+							
+						</li>
+					</ul>
+				</li>
+				<li class='active sub'>
+					<a href='physics.html'>과목</a>
+					<ul>
+						<li class='sub'>
+							<a href='physics.html'>물리</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='chemistry.html'>화학</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='earth.html'>지구과학</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='life.html'>생명과학</a>
+							
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href='news.html'>뉴스</a>
+				</li>
+				<li>
+					<a href='13-03_list.jsp'>QnA</a>
+				</li>
+				
+				
+			</ul>
+		</div>
+		</center>
+
+		<!-- One -->
+			<section id="One" class="wrapper style3">
+				<div class="inner">
+					<header class="align-center">
+						<p>Earth</p>
+						<h2>지구과학</h2>
+					</header>
+				</div>
+			</section>
+
+		<!-- Two -->
+		
+				
+			<section id="two" class="wrapper style2">
+				<div class="inner">
+					<div class="box">
+						<div class="content">
+							<header class="align-center">
+								<p>탐구 보고서</p>
+								<h2></h2>
+							</header>
+							<img src="images/good.jpg" width="150" height="70"> 
+							<img src="images/33.jpg" width="600" height="70">
+							<div class="gallery">
+							<div class="effect">
+							<div class="image fit",class="effect">
+								<a href="https://drive.google.com/file/d/16P_jP26GJjrF0uyzxghQmdEKzADmRb_9/view?usp=sharing"><img src="images/star.jpg" alt=""/></a>
+								<text align="center"><br><h2>별에 관한 것</h2></text>
+							</div>
+							</div>
+							<div class="effect">
+							<div class="image fit",class="effect">
+								<a href="https://drive.google.com/file/d/1ZO2XcRmi72cJh-zcRYSv2hr6iZVxOD1c/view?usp=sharing"><img src="images/mars.jpg" alt="" /></a>
+								<text align="center"><br><h2>화성에서 왜 사람이 살 수 없을까?</h2></text>
+							</div>
+						</div>
+						</div>
+						
+							<p>밑에 이미지를 클릭하면 저장할 수 있어요! </p>
+						
+							<a href="https://drive.google.com/file/d/16P_jP26GJjrF0uyzxghQmdEKzADmRb_9/view?usp=sharing" ><div style="text-align:left;" > 
+							<img src="images/star2.png" alt="" width="170" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp별에 관한 것</b></h3><h4>&nbsp&nbsp&nbsp&nbsp&nbsp-탐구동기<br>&nbsp&nbsp&nbsp&nbsp&nbsp까만 밤하늘을 보니 수 없이 반짝이는 별들이 내 눈 안으로 들어 왔다, 무척이나
+								예뻤다. 하지만 별에 대해서 하나도 아는 것이 없어서<br>&nbsp&nbsp&nbsp&nbsp&nbsp 이번 기회를 통해서 별자리 및 별에 관한 자료를 찾아보면서 지식도 쌓을 겸, 많은 것을 깨닫기로 했다.
+							<br>&nbsp&nbsp&nbsp&nbsp&nbsp탐구 과정 및 결과<br>&nbsp&nbsp&nbsp&nbsp&nbsp 1.&nbsp계절별 별자리예로부터 사람들은 하늘의 별들은 신화나 전설에 나오는 신, 영웅, 동물. 등의 모양으로가상하여 이름을 붙였는데<br>&nbsp&nbsp&nbsp&nbsp&nbsp 이러한 별의 무리를 별자리 또는 성좌라고 합니다 현재까지 발견된 별자리는 88개가 있으며, 계절에 따라 잘 보이는 별자리가 <br>&nbsp&nbsp&nbsp&nbsp&nbsp각각 다릅니다.....</span> </h4>
+							</div><br>
+							
+							<a href="https://drive.google.com/file/d/1ZO2XcRmi72cJh-zcRYSv2hr6iZVxOD1c/view?usp=sharing" ><div style="text-align:left;" > 
+							<img src="images/mars2.jpg" alt="" width="170" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp화성에서 왜 사람이 살 수 없을까?</b></h3><h4>&nbsp&nbsp&nbsp&nbsp&nbsp-탐구동기<br>&nbsp&nbsp&nbsp&nbsp&nbsp지구가 아닌 화성에서 사람이 살 수 없다는 사실에 대해
+알아보고 싶어서 탐구를 하게 되었다.  
+								
+							<br>&nbsp&nbsp&nbsp&nbsp&nbsp탐구 과정 및 결과<br>&nbsp&nbsp&nbsp&nbsp&nbsp 1. 화성까지 여행하는 18개월동안 인간은  
+solar energetic particles(SEPs)와 galactic cosmic rays(GCRs)<br>&nbsp&nbsp&nbsp&nbsp&nbsp
+ 두가지 방사능에 노출. 핵발전소 노동자의 15배를 쏘이게 된다.
+<br>&nbsp&nbsp&nbsp&nbsp&nbsp
+2. 지구 평균 온도는 14도, 화성은 -63도
+
+.....</span> </h4>
+							</div><br>
+							
+							<a href="https://drive.google.com/file/d/1D2ZGBEpnUYC1HaOZbE3U5REa-zJBqGDg/view?usp=sharing" ><div style="text-align:left;" > 
+							<img src="images/cloud2.jpg" alt="" width="170" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp구름 만들기</b></h3><h4>&nbsp&nbsp&nbsp&nbsp&nbsp-탐구동기<br>&nbsp&nbsp&nbsp&nbsp&nbsp구름이 만들어지는 원리가 궁금하여 실험을 하게 되었다.
+							<br>&nbsp&nbsp&nbsp&nbsp&nbsp탐구 과정 및 결과<br>&nbsp&nbsp&nbsp&nbsp&nbsp1. 둥근 플라스크 안에 물을 조금 넣고 온도계와 주사기를   장치한다.<br>&nbsp&nbsp&nbsp&nbsp&nbsp2.주사기의 피스톤을 갑자기 뒤로 잡아당겨 플라스크 안의  공기를 팽창시키면서 내부상태와 온도의 변화를 관찰한다.<br>&nbsp&nbsp&nbsp&nbsp&nbsp3.주사기의 피스톤을 갑자기 밀어 플라스크 안의 공기를 압축 시키면서 내부상태와 온도의 변화를 관찰한다.<br>&nbsp&nbsp&nbsp&nbsp&nbsp4.플라스크 안에 향 연기를 조금 넣은 후 위의 과정을 반복하여 변화를 관찰함......</span> </h4>
+							</div><br>
+							
+							<a href="https://drive.google.com/file/d/1SyOPWXT3x4HBfsStUcr8SKIz_-qDjYS3/view?usp=sharing" ><div style="text-align:left;" > 
+							<img src="images/balloon2.jpg" alt="" width="170" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp열기구의 원리</b></h3><h4>&nbsp&nbsp&nbsp&nbsp&nbsp-탐구동기<br>&nbsp&nbsp&nbsp&nbsp&nbsp과학 자유탐구 주제에 관해 생각하다가 열기구의 원리를 확인하고 싶어서 이 주제를 선정하게 되었다. 
+							<br>&nbsp&nbsp&nbsp&nbsp&nbsp탐구 과정 및 결과<br>&nbsp&nbsp&nbsp&nbsp&nbsp -준비물: 검은 상자, 그릇 2개, 촛불 고정대, 드라이기, 
+             카메라, 필기도구
+
+
+<br>&nbsp&nbsp&nbsp&nbsp&nbsp-실험 과정<br>&nbsp&nbsp&nbsp&nbsp&nbsp
+1. 검은 상자를 준비한다.
+<br>&nbsp&nbsp&nbsp&nbsp&nbsp
+2. 검은 상자 속 왼쪽에는 얼음을 담은 그릇을 두고, 오른쪽은 
+   드라이기로 데운다.....</span> </h4>
+							</div><br>
+						
+			
+							
+														
+							
+						
+							
+						
+							<p></p>
+
+							<p></p>
+
+							<p></p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+					</ul>
+				</div>
+				<div class="copyright">
+					&copy; Untitled. All rights reserved.
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+<style>
+body {
+  font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+  margin: 0px;
+  padding: 50px;
+  background: #e1e1e1;
+}
+.menu {
+  position: relative;
+  height: 60px;
+  background: #2b2f3a;
+  width: auto;
+}
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+.menu > ul {
+  position: relative;
+  display: block;
+  background: #000000;
+  width: 100%;
+  z-index: 500;
+}
+.menu:after, .menu > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.menu.align-right > ul > li {
+  float: right;
+}
+.menu.align-center ul {
+  text-align: center;
+}
+.menu.align-center ul ul {
+  text-align: left;
+}
+.menu > ul > li {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.menu > ul > #menu-button {
+  display: none;
+}
+.menu ul li a {
+  display: block;
+  font-family: Helvetica, sans-serif;
+  text-decoration: none;
+}
+.menu > ul > li > a {
+  font-size: 25px;
+  font-weight: bold;
+  padding: 20px 25px;
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-transition: color 0.25s ease-out;
+  -moz-transition: color 0.25s ease-out;
+  -ms-transition: color 0.25s ease-out;
+  -o-transition: color 0.25s ease-out;
+  transition: color 0.25s ease-out;
+}
+.menu > ul > li.sub > a {
+  padding-right: 32px;
+}
+.menu > ul > li:hover > a {
+  color: #ffffff;
+}
+.menu li.sub::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.menu > ul > li.sub::after {
+  right: 10px;
+  top: 20px;
+  border: 5px solid transparent;
+  border-top-color: #7a8189;
+}
+.menu > ul > li:hover::after {
+  border-top-color: #ffffff;
+}
+.menu ul ul {
+  position: absolute;
+  left: -9999px;
+  top: 70px;
+  opacity: 0;
+  -webkit-transition: opacity .3s ease, top .25s ease;
+  -moz-transition: opacity .3s ease, top .25s ease;
+  -ms-transition: opacity .3s ease, top .25s ease;
+  -o-transition: opacity .3s ease, top .25s ease;
+  transition: opacity .3s ease, top .25s ease;
+  z-index: 1000;
+}
+.menu ul ul ul {
+  top: 37px;
+  padding-left: 5px;
+}
+.menu ul ul li {
+  position: relative;
+}
+.menu > ul > li:hover > ul {
+  left: auto;
+  top: 44px;
+  opacity: 1;
+}
+.menu.align-right > ul > li:hover > ul {
+  left: auto;
+  right: 0;
+  opacity: 1;
+}
+.menu ul ul li:hover > ul {
+  left: 170px;
+  top: 0;
+  opacity: 1;
+}
+.menu.align-right ul ul li:hover > ul {
+  left: auto;
+  right: 170px;
+  top: 0;
+  opacity: 1;
+  padding-right: 5px;
+}
+.menu ul ul li a {
+  width: 130px;
+  border-bottom: 1px solid #eeeeee;
+  padding: 10px 20px;
+  font-size: 20px;
+  color: #000000;
+  background: #ffffff;
+  -webkit-transition: all .35s ease;
+  -moz-transition: all .35s ease;
+  -ms-transition: all .35s ease;
+  -o-transition: all .35s ease;
+  transition: all .35s ease;
+}
+.menu.align-right ul ul li a {
+  text-align: right;
+}
+.menu ul ul li:hover > a {
+  background: #f2f2f2;
+  color: #8c9195;
+}
+.menu ul ul li:last-child > a, .menu ul ul li.last > a {
+  border-bottom: 0;
+}
+.menu > ul > li > ul::after {
+  content: '';
+  border: 6px solid transparent;
+  width: 0;
+  height: 0;
+  border-bottom-color: #ffffff;
+  position: absolute;
+  top: -12px;
+  left: 30px;
+}
+.menu.align-right > ul > li > ul::after {
+  left: auto;
+  right: 30px;
+
+.menu.align-right ul ul li.sub::after {
+  border-left-color: transparent;
+  border-right-color: #9ea2a5;
+  right: auto;
+  left: 10px;
+}
+.menu ul ul li.sub:hover::after {
+  border-left-color: #ffffff;
+  right: -5px;
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.menu.align-right ul ul li.sub:hover::after {
+  border-right-color: #ffffff;
+  border-left-color: transparent;
+  left: -5px;
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+</style>
+
+		<title>과학 정보 포털 사이언스에듀</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<div class='menu'>
+			<ul>
+			<br>
+			&nbsp&nbsp&nbsp&nbsp&nbsp<a href="index.html"><img src="images/logoo.jpg" width="400" height="70"> </a>
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			
+			<li>
+					<a href='index.html'>HOME</a>
+				</li>
+				<li>
+					<a href='intro.html'>소개</a>
+				</li>
+				<li class='active sub'>
+					<a href='grade12.html'>학년</a>
+					<ul>
+						<li class='sub'>
+							<a href='grade12.html'>1,2학년</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='grade34.html'>3,4학년</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='grade5.html'>5학년</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='grade6.html'>6학년</a>
+							
+						</li>
+					</ul>
+				</li>
+				<li class='active sub'>
+					<a href='physics.html'>과목</a>
+					<ul>
+						<li class='sub'>
+							<a href='physics.html'>물리</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='chemistry.html'>화학</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='earth.html'>지구과학</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='life.html'>생명과학</a>
+							
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href='news.html'>뉴스</a>
+				</li>
+				<li>
+					<a href='13-03_list.jsp'>QnA</a>
+				</li>
+				
+			</ul>
+		</div>
+		</center>
+		<!-- One -->
+			<section id="One" class="wrapper style3">
+				<div class="inner">
+					<header class="align-center">
+						<p>과학 뉴스</p>
+						<h2>과학 뉴스</h2>
+					</header>
+				</div>
+			</section>
+
+		<!-- Two -->
+		
+				
+			<section id="two" class="wrapper style2">
+				<div class="inner">
+					<div class="box">
+						<div class="content">
+							<header class="align-center">
+								<p>과학뉴스</p>
+								<h2></h2>
+							</header>
+							
+							 
+							<div style="text-align:left;" > 
+							<img src="images/planet.jpg" alt="" width="280" height="200" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp소행성에서 ‘우주광물’ 채굴 가능</b></h3><h3>&nbsp&nbsp&nbsp&nbsp&nbsp38% 중력값, 우주정거장 설치해 거주도 가능</h3><br>
+							&nbsp&nbsp&nbsp&nbsp&nbsp태양 주위를 돌고 있는 행성보다 작은 천체를 소행성(Asteroid)이라고 한다.&nbsp&nbsp&nbsp&nbsp&nbsp<br>
+							
+							&nbsp&nbsp&nbsp&nbsp&nbsp화성과 목성 궤도 사이에 있는 소행성대에서 1801년 세레스(Ceres)가 발견된 이후 소행성 발견이 줄을 이었고 지금까지<br>&nbsp&nbsp&nbsp&nbsp&nbsp23만 여개를 찾아냈다.
+							그동안 우주과학자들은 소행성이 자전하면서 지구처럼 중력을 만들어내고 있어 그 위에<br>&nbsp&nbsp&nbsp&nbsp&nbsp착륙해도 우주 바깥으로 튕겨나가지 않으며 고에너지의 우주선(cosmic ray)으로부터 안전을 도모할 수 있다고 보고 있었다.<br></span> </h4>
+							</div><br><br>
+							
+							
+							<h3><b>“소행성 중력값 화성과 유사한 수준” </b></h3><br>
+							10일 ‘사이언스 얼럿(Science Alert)’에 따르면 오스트리아 빈 대학교 연구팀이 가상의 소행성에 새로운 중력 모형을 적용,<br> 390 × 500m 영역의 소행성 중력값을 측정해냈다. 빈 대학 연구팀이 추출한 소행성의 중력값은 지구의 38%로 화성과 유사한 것이다. <br>
+							그리고 이 중력값에 따라 소행성이 굳은 바위로 구성돼 있으며, 그 표면에 우주정거장을 설치할 경우 안전한 거주가 가능하다는 결론에 도달했다.<br>
+							 빠른 속도로 비행하고 있는 소행성에서 예상보다 강한 중력이 존재하는 것은 자전에 의한 원심력 때문이다.<br><br>
+							 연구팀은 논문을 통해 “중력값에 따라 채굴 장비를 설치할 경우 소행성 바위 속으로 굴착이 가능하며,<br>
+							 바위 속으로 형성된 동굴 안에 우주정거장을 설치할 경우 우주인의 안전한 거주가 가능하다”고 말했다.<br>
+							 연구팀은 “이번에 발전시킨 새로운 중력 모형에는 최근에 발견한 소행성 ‘3757 아나골레이(3757 Anagolay)’, <br>
+							 ‘99942 아모피스(99942 Apophis)’, ‘3361 오르페우스(3361 Orpheus)’의 상황을 적용했다”고 밝혔다.
+							<br><br><br><br>
+							
+							<h3><b>“20년 후에는 소행성에서 채굴 가능할 것” </b></h3><br>
+							그동안 소행성에서의 채굴과 관련된 많은 주장이 있어 왔으나, 이론에 불과했다. 막상 그 일을 시작하려면 안전을 보장하기 위한 근거가 필요했다.<br>이러한 상황에서 이번 논문이 중력 모형을 통해 소행성 중력을 측정하고, 이 중력 하에서 어떤 식으로 채굴 작업이 가능한지<br>
+							구체적인 소행성 채굴 및 거주 계획을 제시함에 따라 세계적인 관심이 쏠리고 있다.<br><br>하지만 소행성 채굴을 위해 입증해야 할 과제는 아직 남아 있다.<br>
+							마인들 교수는 “소행성에 따라 자전 속도가 달라 소행성 상황에 따라 계획을 조절해야 한다”고 말했다.<br><br>
+							현재 우주강대국들은 소행성 치열하게 탐사경쟁을 벌이고 있는 중이다.<br>
+							일본과 미국의 탐사선은 지난해 각각 태양 궤도를 돌고 있는 소행성에 도착했으며 소행성 표면에 직접 착륙하거나 근접해 지표면의 토양을 채취할 계획이다.<br>
+							마인들 교수는 “소행성에 대한 비밀이 속속 밝혀지고 있어 향후 20년 후에는 소행성 채굴이 가능할 것”이라고 말했다.<br>
+							<br><br>
+							
+							<br><br>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+						
+							
+							
+							
+						
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+					</ul>
+				</div>
+				<div class="copyright">
+					&copy; Untitled. All rights reserved.
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

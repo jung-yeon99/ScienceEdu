@@ -1,0 +1,373 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+<style>
+body {
+  font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+  margin: 0px;
+  padding: 50px;
+  background: #e1e1e1;
+}
+.menu {
+  position: relative;
+  height: 60px;
+  background: #2b2f3a;
+  width: auto;
+}
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+.menu > ul {
+  position: relative;
+  display: block;
+  background: #000000;
+  width: 100%;
+  z-index: 500;
+}
+.menu:after, .menu > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.menu.align-right > ul > li {
+  float: right;
+}
+.menu.align-center ul {
+  text-align: center;
+}
+.menu.align-center ul ul {
+  text-align: left;
+}
+.menu > ul > li {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.menu > ul > #menu-button {
+  display: none;
+}
+.menu ul li a {
+  display: block;
+  font-family: Helvetica, sans-serif;
+  text-decoration: none;
+}
+.menu > ul > li > a {
+  font-size: 25px;
+  font-weight: bold;
+  padding: 20px 25px;
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-transition: color 0.25s ease-out;
+  -moz-transition: color 0.25s ease-out;
+  -ms-transition: color 0.25s ease-out;
+  -o-transition: color 0.25s ease-out;
+  transition: color 0.25s ease-out;
+}
+.menu > ul > li.sub > a {
+  padding-right: 32px;
+}
+.menu > ul > li:hover > a {
+  color: #ffffff;
+}
+.menu li.sub::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.menu > ul > li.sub::after {
+  right: 10px;
+  top: 20px;
+  border: 5px solid transparent;
+  border-top-color: #7a8189;
+}
+.menu > ul > li:hover::after {
+  border-top-color: #ffffff;
+}
+.menu ul ul {
+  position: absolute;
+  left: -9999px;
+  top: 70px;
+  opacity: 0;
+  -webkit-transition: opacity .3s ease, top .25s ease;
+  -moz-transition: opacity .3s ease, top .25s ease;
+  -ms-transition: opacity .3s ease, top .25s ease;
+  -o-transition: opacity .3s ease, top .25s ease;
+  transition: opacity .3s ease, top .25s ease;
+  z-index: 1000;
+}
+.menu ul ul ul {
+  top: 37px;
+  padding-left: 5px;
+}
+.menu ul ul li {
+  position: relative;
+}
+.menu > ul > li:hover > ul {
+  left: auto;
+  top: 44px;
+  opacity: 1;
+}
+.menu.align-right > ul > li:hover > ul {
+  left: auto;
+  right: 0;
+  opacity: 1;
+}
+.menu ul ul li:hover > ul {
+  left: 170px;
+  top: 0;
+  opacity: 1;
+}
+.menu.align-right ul ul li:hover > ul {
+  left: auto;
+  right: 170px;
+  top: 0;
+  opacity: 1;
+  padding-right: 5px;
+}
+.menu ul ul li a {
+  width: 130px;
+  border-bottom: 1px solid #eeeeee;
+  padding: 10px 20px;
+  font-size: 20px;
+  color: #000000;
+  background: #ffffff;
+  -webkit-transition: all .35s ease;
+  -moz-transition: all .35s ease;
+  -ms-transition: all .35s ease;
+  -o-transition: all .35s ease;
+  transition: all .35s ease;
+}
+.menu.align-right ul ul li a {
+  text-align: right;
+}
+.menu ul ul li:hover > a {
+  background: #f2f2f2;
+  color: #8c9195;
+}
+.menu ul ul li:last-child > a, .menu ul ul li.last > a {
+  border-bottom: 0;
+}
+.menu > ul > li > ul::after {
+  content: '';
+  border: 6px solid transparent;
+  width: 0;
+  height: 0;
+  border-bottom-color: #ffffff;
+  position: absolute;
+  top: -12px;
+  left: 30px;
+}
+.menu.align-right > ul > li > ul::after {
+  left: auto;
+  right: 30px;
+
+.menu.align-right ul ul li.sub::after {
+  border-left-color: transparent;
+  border-right-color: #9ea2a5;
+  right: auto;
+  left: 10px;
+}
+.menu ul ul li.sub:hover::after {
+  border-left-color: #ffffff;
+  right: -5px;
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.menu.align-right ul ul li.sub:hover::after {
+  border-right-color: #ffffff;
+  border-left-color: transparent;
+  left: -5px;
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+</style>
+
+		<title>과학 정보 포털 사이언스에듀</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<div class='menu'>
+			<ul>
+			<br>
+			&nbsp&nbsp&nbsp&nbsp&nbsp<a href="index.html"><img src="images/logoo.jpg" width="400" height="70"> </a>
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			
+			<li>
+					<a href='index.html'>HOME</a>
+				</li>
+				<li>
+					<a href='intro.html'>소개</a>
+				</li>
+				<li class='active sub'>
+					<a href='grade12.html'>학년</a>
+					<ul>
+						<li class='sub'>
+							<a href='grade12.html'>1,2학년</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='grade34.html'>3,4학년</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='grade5.html'>5학년</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='grade6.html'>6학년</a>
+							
+						</li>
+					</ul>
+				</li>
+				<li class='active sub'>
+					<a href='physics.html'>과목</a>
+					<ul>
+						<li class='sub'>
+							<a href='physics.html'>물리</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='chemistry.html'>화학</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='earth.html'>지구과학</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='life.html'>생명과학</a>
+							
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href='news.html'>뉴스</a>
+				</li>
+				<li>
+					<a href='13-03_list.jsp'>QnA</a>
+				</li>
+				
+				
+			</ul>
+		</div>
+		</center>
+		<!-- One -->
+			<section id="One" class="wrapper style3">
+				<div class="inner">
+					<header class="align-center">
+						<p>Life</p>
+						<h2>생명과학</h2>
+					</header>
+				</div>
+			</section>
+
+		<!-- Two -->
+		
+				
+			<section id="two" class="wrapper style2">
+				<div class="inner">
+					<div class="box">
+						<div class="content">
+							<header class="align-center">
+								<p>탐구 보고서</p>
+								<h2></h2>
+							</header>
+							<img src="images/good.jpg" width="150" height="70">
+							<img src="images/33.jpg" width="600" height="70">
+							<div class="gallery">
+							<div class="effect">
+							<div class="image fit",class="effect">
+								<a href="https://drive.google.com/file/d/1PLLa58-w07Tu1sxaLfUpokWynOmUEbmn/view?usp=sharing"><img src="images/sugar.jpg" alt=""/></a>
+								<text align="center"><br><h2>설탕은 왜 우리몸에 해로운 걸까?</h2></text>
+							</div>
+							</div>
+							<div class="effect">
+							<div class="image fit",class="effect">
+								<a href="https://drive.google.com/file/d/1CDfbUsNyyMYN6yctoYDLN1-e-BOZiaB4/view?usp=sharing"><img src="images/plant.jpg" alt="" /></a>
+								<text align="center"><br><h2>어느 물에서 식물이 더 잘 자랄까?</h2></text>
+							</div>
+						</div>
+						</div>
+							
+						<p>밑에 이미지를 클릭하면 저장할 수 있어요! </p>
+							
+							 
+							<a href="https://drive.google.com/file/d/1PLLa58-w07Tu1sxaLfUpokWynOmUEbmn/view?usp=sharing" ><div style="text-align:left;" > 
+							<img src="images/suger2.png" alt="" width="170" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp설탕은 왜 우리몸에 해로운 걸까?</b></h3><h4>&nbsp&nbsp&nbsp&nbsp&nbsp-탐구동기<br>&nbsp&nbsp&nbsp&nbsp&nbsp엄마가 설탕이 해롭다고 하셨는데 왜 설탕이 해로운지 궁금해서 탐구보고서를 쓸 때 하기로 했다. 그래서 하게 되었다.<br>&nbsp&nbsp&nbsp&nbsp&nbsp탐구 과정 및 결과<br>&nbsp&nbsp&nbsp&nbsp&nbsp 결과:<br>&nbsp&nbsp&nbsp&nbsp&nbsp 1. 면역력을 떨어 뜨린다.하루에 100~150g의 설탕 먹는 아이들을 대상으로 조사한 결과, 면역세포 마이크로파지가 5시간 이상<br>&nbsp&nbsp&nbsp&nbsp&nbsp 꼼짝도 않고 있음이 확인됐다.또 토마토의 항암작용 성분인 라이코펜도 설탕과 함께 먹으면 효과가 떨어진다는 연구 결과가 있다.<br>&nbsp&nbsp&nbsp&nbsp&nbsp아이들의 잦은 감기도 이런 설탕 성분의 과다 섭취에서 원인을 찾을 수 있다.......</span> </h4>
+							</div><br>
+							
+							<a href="https://drive.google.com/file/d/1CDfbUsNyyMYN6yctoYDLN1-e-BOZiaB4/view?usp=sharing" ><div style="text-align:left;" > 
+							<img src="images/plant2.png" alt="" width="170" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp어느 물에서 식물이 더 잘 자랄까?</b></h3><h4>&nbsp&nbsp&nbsp&nbsp&nbsp-탐구동기<br>&nbsp&nbsp&nbsp&nbsp&nbsp1. 탐구 동기
+엄마가 취미로 식물을 키우는데 식물이 너무 안자라서 답답했다. 그래서 혹시 물 말고도 소금물이나 설탕물같은...<br>&nbsp&nbsp&nbsp&nbsp&nbsp탐구 과정 및 결과<br>&nbsp&nbsp&nbsp&nbsp&nbsp-준비물:물, 소금물, 설탕물, 식물씨앗<br>&nbsp&nbsp&nbsp&nbsp&nbsp-실험과정:<br>&nbsp&nbsp&nbsp&nbsp&nbsp1. 같은 양의 물컵을 3개 준비하여 2개의 컵에는 설탕과 소금을 첨가한다.<br>&nbsp&nbsp&nbsp&nbsp&nbsp2. 각각 3개의 물을 티슈에 부어 식물 씨앗을 놓는다......</span> </h4>
+							</div><br>
+							
+							
+							
+							<a href="https://drive.google.com/file/d/1FDMRMFh3XLb6zf_FJ394fdfsXbUEzauO/view?usp=sharing" ><div style="text-align:left;" > 
+							<img src="images/fish2.png" alt="" width="170" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp깊은 바다 물고기는 어떻게 수압을 견딜까?</b></h3><h4>&nbsp&nbsp&nbsp&nbsp&nbsp-탐구동기<br>&nbsp&nbsp&nbsp&nbsp&nbsp티비를 보다가 바다 물고기들에 대해 보게 되었는데 문뜩 깊은 바다는 수압이 쎌텐데 어떻게견디나 궁금해서 탐구하게 되었다.<br>&nbsp&nbsp&nbsp&nbsp&nbsp탐구 과정 및 결과<br>&nbsp&nbsp&nbsp&nbsp&nbsp심해 생물은 어두운 바닷속 수km 깊이에서 엄청난 수압을 견디며 살아가고 있습니다.<br>&nbsp&nbsp&nbsp&nbsp&nbsp이들은 태평양과 대서양 등 바다곳곳에서 채집한 수백 가지 표본에서 발견되고 있는데 생물들은 매우 다양해 가까운 장소에서 <br>&nbsp&nbsp&nbsp&nbsp&nbsp 얻어진 표본이라고 할지라도 중복되는 경우가 거의 없다고 합니다<br>&nbsp&nbsp&nbsp&nbsp&nbsp1. 각 동물의 표본들은 매우 토속적이며 이것은 태평양이나 카리브 해의 섬에서 발견되는 동물들이 다른 곳에서 살지 않는다는......</span> </h4>
+							</div><br>
+							
+							<a href="https://drive.google.com/file/d/1_aybq0dMFfQGoda2oiftUoFzFvKPaedG/view?usp=sharing" ><div style="text-align:left;" > 
+							<img src="images/blood2.png" alt="" width="170" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp혈액형과 성격의 관계</b></h3><h4>&nbsp&nbsp&nbsp&nbsp&nbsp-탐구동기<br>&nbsp&nbsp&nbsp&nbsp&nbsp SNS를 보다보면 가끔 혈액형 별 성격이 뜨는 걸보고 탐구 해보고 싶었다.<br>&nbsp&nbsp&nbsp&nbsp&nbsp 탐구과정 및 결과<br>&nbsp&nbsp&nbsp&nbsp&nbsp 혈구가 가지고 있는 항원의 유무 또는 조합으로 혈액을 분류하는 방식이다.<br>&nbsp&nbsp&nbsp&nbsp&nbsp A또는 B항원의 유무에 따라 분류되는 것이 ABO식 혈액형이고, M 및 N항원의 유무에 <br>&nbsp&nbsp&nbsp&nbsp&nbsp 따른 분류가 MN식 혈액형이며, 또 Rho(D)인자의 유무로 분류하는 것이<br>&nbsp&nbsp&nbsp&nbsp&nbsp Rh식 혈액형이다.......</span> </h4>
+							</div><br>
+							
+							
+							
+						
+							
+						
+							<p></p>
+
+							<p></p>
+
+							<p></p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+					</ul>
+				</div>
+				<div class="copyright">
+					&copy; Untitled. All rights reserved.
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

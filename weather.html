@@ -1,0 +1,388 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+<style>
+body {
+  font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+  margin: 0px;
+  padding: 50px;
+  background: #e1e1e1;
+}
+.menu {
+  position: relative;
+  height: 60px;
+  background: #2b2f3a;
+  width: auto;
+}
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+.menu > ul {
+  position: relative;
+  display: block;
+  background: #000000;
+  width: 100%;
+  z-index: 500;
+}
+.menu:after, .menu > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.menu.align-right > ul > li {
+  float: right;
+}
+.menu.align-center ul {
+  text-align: center;
+}
+.menu.align-center ul ul {
+  text-align: left;
+}
+.menu > ul > li {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.menu > ul > #menu-button {
+  display: none;
+}
+.menu ul li a {
+  display: block;
+  font-family: Helvetica, sans-serif;
+  text-decoration: none;
+}
+.menu > ul > li > a {
+  font-size: 25px;
+  font-weight: bold;
+  padding: 20px 25px;
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-transition: color 0.25s ease-out;
+  -moz-transition: color 0.25s ease-out;
+  -ms-transition: color 0.25s ease-out;
+  -o-transition: color 0.25s ease-out;
+  transition: color 0.25s ease-out;
+}
+.menu > ul > li.sub > a {
+  padding-right: 32px;
+}
+.menu > ul > li:hover > a {
+  color: #ffffff;
+}
+.menu li.sub::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.menu > ul > li.sub::after {
+  right: 10px;
+  top: 20px;
+  border: 5px solid transparent;
+  border-top-color: #7a8189;
+}
+.menu > ul > li:hover::after {
+  border-top-color: #ffffff;
+}
+.menu ul ul {
+  position: absolute;
+  left: -9999px;
+  top: 70px;
+  opacity: 0;
+  -webkit-transition: opacity .3s ease, top .25s ease;
+  -moz-transition: opacity .3s ease, top .25s ease;
+  -ms-transition: opacity .3s ease, top .25s ease;
+  -o-transition: opacity .3s ease, top .25s ease;
+  transition: opacity .3s ease, top .25s ease;
+  z-index: 1000;
+}
+.menu ul ul ul {
+  top: 37px;
+  padding-left: 5px;
+}
+.menu ul ul li {
+  position: relative;
+}
+.menu > ul > li:hover > ul {
+  left: auto;
+  top: 44px;
+  opacity: 1;
+}
+.menu.align-right > ul > li:hover > ul {
+  left: auto;
+  right: 0;
+  opacity: 1;
+}
+.menu ul ul li:hover > ul {
+  left: 170px;
+  top: 0;
+  opacity: 1;
+}
+.menu.align-right ul ul li:hover > ul {
+  left: auto;
+  right: 170px;
+  top: 0;
+  opacity: 1;
+  padding-right: 5px;
+}
+.menu ul ul li a {
+  width: 130px;
+  border-bottom: 1px solid #eeeeee;
+  padding: 10px 20px;
+  font-size: 20px;
+  color: #000000;
+  background: #ffffff;
+  -webkit-transition: all .35s ease;
+  -moz-transition: all .35s ease;
+  -ms-transition: all .35s ease;
+  -o-transition: all .35s ease;
+  transition: all .35s ease;
+}
+.menu.align-right ul ul li a {
+  text-align: right;
+}
+.menu ul ul li:hover > a {
+  background: #f2f2f2;
+  color: #8c9195;
+}
+.menu ul ul li:last-child > a, .menu ul ul li.last > a {
+  border-bottom: 0;
+}
+.menu > ul > li > ul::after {
+  content: '';
+  border: 6px solid transparent;
+  width: 0;
+  height: 0;
+  border-bottom-color: #ffffff;
+  position: absolute;
+  top: -12px;
+  left: 30px;
+}
+.menu.align-right > ul > li > ul::after {
+  left: auto;
+  right: 30px;
+
+.menu.align-right ul ul li.sub::after {
+  border-left-color: transparent;
+  border-right-color: #9ea2a5;
+  right: auto;
+  left: 10px;
+}
+.menu ul ul li.sub:hover::after {
+  border-left-color: #ffffff;
+  right: -5px;
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.menu.align-right ul ul li.sub:hover::after {
+  border-right-color: #ffffff;
+  border-left-color: transparent;
+  left: -5px;
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+</style>
+
+		<title>과학 정보 포털 사이언스에듀</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<div class='menu'>
+			<ul>
+			<br>
+			&nbsp&nbsp&nbsp&nbsp&nbsp<a href="index.html"><img src="images/logoo.jpg" width="400" height="70"> </a>
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			
+			<li>
+					<a href='index.html'>HOME</a>
+				</li>
+				<li>
+					<a href='intro.html'>소개</a>
+				</li>
+				<li class='active sub'>
+					<a href='grade12.html'>학년</a>
+					<ul>
+						<li class='sub'>
+							<a href='grade12.html'>1,2학년</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='grade34.html'>3,4학년</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='grade5.html'>5학년</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='grade6.html'>6학년</a>
+							
+						</li>
+					</ul>
+				</li>
+				<li class='active sub'>
+					<a href='physics.html'>과목</a>
+					<ul>
+						<li class='sub'>
+							<a href='physics.html'>물리</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='chemistry.html'>화학</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='earth.html'>지구과학</a>
+							
+						</li>
+						<li class='sub'>
+							<a href='life.html'>생명과학</a>
+							
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href='news.html'>뉴스</a>
+				</li>
+				<li>
+					<a href='13-03_list.jsp'>QnA</a>
+				</li>
+				
+			</ul>
+		</div>
+		</center>
+		<!-- One -->
+			<section id="One" class="wrapper style3">
+				<div class="inner">
+					<header class="align-center">
+						<p>과학 뉴스</p>
+						<h2>과학 뉴스</h2>
+					</header>
+				</div>
+			</section>
+
+		<!-- Two -->
+		
+				
+			<section id="two" class="wrapper style2">
+				<div class="inner">
+					<div class="box">
+						<div class="content">
+							<header class="align-center">
+								<p>과학뉴스</p>
+								<h2></h2>
+							</header>
+							
+							 
+							<div style="text-align:left;" > 
+							<img src="images/weather.jpg" alt="" width="280" height="250" /> 
+							<span style="position:absolute;word-break:break-all;text-align:left;"><h3><b>&nbsp&nbsp&nbsp&nbsp&nbsp세계 최초 기후변화 교육 ‘의무화’</b></h3><h3>&nbsp&nbsp&nbsp&nbsp&nbsp이탈리아, 2020년 9월 신학기부터 시행</h3><br>
+							&nbsp&nbsp&nbsp&nbsp&nbsp세계 최초로 이탈리아 공립학교에서 기후변화(climate change) 교육이 실시된다.&nbsp&nbsp&nbsp&nbsp&nbsp<br><br>
+							
+							&nbsp&nbsp&nbsp&nbsp&nbsp12일 인터넷 포럼 ‘빅 싱크(Big Think)’에 따르면 이탈리아 교육부는 내년 9월부터 공립학교 교과과정에 <br>&nbsp&nbsp&nbsp&nbsp&nbsp33시간의 기후변화 관련 수업을 포함시킬 계획이다. 로렌조 피오라몬티(Lorenzo Fioramonti) 이탈리아 교육부 장관은<br> 
+							&nbsp&nbsp&nbsp&nbsp&nbsp최근 언론과의 인터뷰를 통해 기후변화 교육에 대한 필요성을 강조하고,“새로운 교과과정을 통해 <br>&nbsp&nbsp&nbsp&nbsp&nbsp국민들 사이에 기후변화에 대한 경각심을 불러일으킬 수 있을 것”으로 내다봤다.<br><br></span> </h4>
+							</div><br><br>
+							
+							
+							<h3><b>교과과정에 ‘지속가능 개발’ 포함</b></h3><br>
+							그동안 이탈리아에서는 기후변화 교육을 요구하는 시위가 잇따랐다.<br>피오라몬티 장관은 지난 9월 학생들의 시위 참여를 지원하기 위해  수업을 포기하고 시위에 참여한 학생들을 결석 처리하지 말라는 내용의 공문을 발송한 바 있다.<br><br>
+							새로운 기후변화 교과과정에는 ‘기후변화’와 함께 ‘지속가능 개발(Sustainable development)’에 대한 내용이 포함된다.<br>
+							 교육부 대변인은 교육부는 향후 과학자들의 도움을 얻어 구체적인 내용의 교과과정을 완성하겠다고 밝혔다.<br><br>
+							 새로운 커리큘럼이 시행됨에 따라 이탈리아 공립학교에서는 내년 9월 신학기부터 연간 33시간의 기후변화 교육을 실시해야 한다.<br><br>
+							교육부를 통해 그동안 검토돼온 계획에 따르면 신 교과과정은 수학, 물리, 지리 등의 수업에 포함돼 병행 학습이 이루어지게 된다. <br>
+							 이에 따라 관련 학과목 교사들은 기후변화 교육을 위한 커리큘럼을 사전에 수료해야 할 것으로 보인다. <br><br>
+							 이탈리아의 초등학교(5년)와 중학교(3년)는 의무교육기관으로 공‧사립에 관계없이 국가에서 정한 교육과정이 적용되고 있다.<br>
+							 또 3~6세 어린이들의 약 90%는 자모학교(Scole Materne)라고 불리는 공립 유치원에 다니고 있다.<br><br>
+							 기술‧직업 등과 관련 다양한 교육을 하고 있는 고등학교 역시 많은 수의 공립학교가 운영되고 있어 기후변화 교육을 받게 될 학생의 수가 크게 늘어날 전망이다.
+							 
+			
+							 
+							<br><br><br><br>
+							
+							<h3><b>미국 학부모 중 86% 환경교육 ‘찬성’</b></h3><br>
+							이탈리아 정부가 ‘기후변화’를 정식 교육과정으로 채택하면서 환경 재난으로 고통을 받고 있는 나라들 역시 이탈리아를 주시하고 있는 중이다.<br><br>대표적인 나라가 미국이다.미국에서는 80%가 넘는 학부모가 환경교육을 요청하고 있지만 반대하는 학부모도 10여 %에 이르고 있다.<br><br>
+							이에 따라 교육당국에서는 학교들 재량에 따라 환경과 관련된 과학교육을 채택토록 하고 있다.<br>미 교육부는 환경교육을 시행하고 있는 학교를 위해 표준 교과과정인 NGSS(Next Generation Science Standards)을 통해 커리큘럼 등을 지원하고 있다.<br><br>
+							이런 분위기 속에서 환경 교육을 채택하는 학교의 수가 계속 늘고 있다. 지난 2013년 이후 19개 주가 환경교육을 정식 커리큘럼으로 채택했다.<br><br>
+							그러나 전체 51개 주 가운데 10여 개 주에서 환경 교육을 채택하지 않고 있는데, 이는 자금 때문인 것으로 분석되고 있다.<br>
+							환경 정책을 놓고 논쟁이 가열되면서 어떤 주에서는 학교에서 기후변화가 사람에 의한 것이 아니라는 내용의 학습도 진행되고 있는 중이다.<br><br>
+							그러나 지난 4월 미국 공영 라디오방송 NPR과 여론조사기관 입소스(Ipsos)의 공동 여론조사에 따르면 미국인 중 75%는 기후변화가 인간 때문이라고 판단하고 있는 것으로 나타나고 있다.<br><br>
+							또한 80%가 넘는 학부모가 환경교육을 강화해야 한다고 보고 있다.<br>
+							또 다른 조사에서는 86%에 달하는 학부모가 환경교육 시행에 찬성하고 있는 것으로 나타나고 있다.<br><br>
+							이런 상황에서 이탈리아의 기후변화 교육 커리큘럼 도입은 큰 영향을 미칠 것으로 예상된다.<br><br>
+							관계자들은 미국뿐만 아니라 기후변화로 인해 큰 피해를 겪고 있는 EU 국가들, 호주 등 남태평양 주변 국가들을 중심으로 <br>
+							기후변화를 정식 교과과정으로 채택하기 위한 움직임이 활발해질 것으로 보고 있다.
+							
+							<br><br>
+							
+							<br><br>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+						
+							
+							
+							
+						
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+					</ul>
+				</div>
+				<div class="copyright">
+					&copy; Untitled. All rights reserved.
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
