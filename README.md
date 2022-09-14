@@ -18,7 +18,7 @@
 - HTML
 - CSS
 - JSP 
-- JQuery
+- J
 
 ## Backend
 
